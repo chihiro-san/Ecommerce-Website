@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Third Eye E-commerce store</title>
+      <meta name="description" content ="Just Basic Html"/>
+      <meta name="keywords" content="HTML"/>
+      <meta name="author" content="Team3"/>
+      
+      <link rel="stylesheet" type="text/css" href="../pages/../css/style.css">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <title>Third Eye</title>
+      <style type="text/css">
+         html
+         {
+            scroll-behavior: smooth;
+         }
+
+         body
+         {
+            height: 100%;
+         }
+
+         /* The following CSS code styles the menu-btn class*/
+         .menu-btn
+         {
+            color: #424144;
+            font: 23px;
+            cursor: pointer;
+            display: none;
+         }
+
+         /* The following CSS code styles the html class*/
+         .html
+         {
+            background-color: #fff, #ffd6d6;
+         }
+
+         /* The following CSS code styles the gg class*/
+         .gg
+         {
+            position: absolute;
+            right: 10;
+            top: 36%;
+         }
+
+         /* The following CSS code styles listing of the subclass menu of the navbar class*/
+         .navbar .menu li
+         {
+            list-style: none;
+            display: inline-block; 
+         }
+
+         .navbar .menu li a
+         {
+            display: block;
+            margin-left: 20px;
+            color: #424144;
+            border-bottom: 4px solid transparent;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+         }
+
+         .navbar .menu li .active
+         {
+            border-bottom: 4px solid red;
+         }
+
+         .navbar .menu li a i
+         {
+         color: red;
+         }
+
+         .navbar .menu li a:hover
+         {
+         border-bottom: 4px solid red;
+         }
+
+         /* The following CSS code styles the content class and the texts*/
+         .content
+         {
+            background-image: url(../images/dslr.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            height: 100vh;
+         }
+
+         .content h1
+         {
+            font-size: 70px;
+            margin-top: 20%;
+         }
+
+         .content p
+         {
+            font-size: 20px;
+            margin-top: 20px;
+         }
+
+         /* The following CSS code styles the button of the content class*/
+         .content button
+         {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+         }
+
+         /* The following CSS code styles the content1 class and the texts*/
+         .content1
+         {
+            background-image: url(../images/acessories.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            height: 100vh;
+         }
+
+         .content1 h1
+         {
+            font-size: 70px;
+            margin-top: 20%;
+         }
+
+         .content1 p
+         {
+            font-size: 20px;
+            margin-top: 20px;
+         }
+
+         /* The following CSS code styles button of the contennt class*/
+         .content1 button
+         {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+         }
+
+         /* The following CSS code styles the pheading class*/
+         .pheading
+         {
+            text-align: center;
+            margin: 50px 0;
+            color: #424144;
+         }
+
+         /* Products */ 
+         /* The following CSS code styles the sec class*/
+         .sec
+         {
+            padding: 10px 5%;
+         }
+
+         /* The following CSS code styles the product class*/
+         .products
+         {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+         }
+
+         /* The following CSS code styles the subclass card of the products class*/
+         .products .card
+         {
+            width: 300px;
+            background: #EFEEEE;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 35px;
+            padding: 1px;
+            margin-bottom: 20px;
+         }
+
+         /* The following CSS code styles the hover effect for the subclass card of the products class*/
+         .products .card:hover
+         {
+            background: none;
+            transform: translate(-10px);
+         }
+
+         /* The following CSS code styles the image the subclass card of the products class*/
+         .products .card img
+         {
+            align-items: center;
+            height: 200px;
+            width: 90%;
+         }
+
+         /* The following CSS code styles sub-sub-class desc of the products class*/
+         .products .card .desc
+         {
+            padding: 5px 20px;
+            opacity: 0.8;
+         }
+
+         /* The following CSS code styles sub-sub-class title of the products class*/
+         .products .card .title1
+         {
+            font-weight: 900;
+            font-size: 20px;
+            color: #424144;
+            padding: 0 20px;
+         }
+
+         /* The following CSS code styles sub-sub-class box of the products class*/
+         .products .card .box
+         {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+         }
+
+         /* The following CSS code styles sub-class price of box class*/
+         .products .card .box .price
+         {
+            color: #f63e4e;
+            font-size: 20px;
+            font-weight: bold;
+         }
+
+         /* The following CSS code styles sub-class btn of box class*/
+         .products .card .box .btn
+         {
+            font-size: 13px;
+            color: #f63e4e;
+            padding: 10px 18px;
+            font-weight: 900;
+            border: 1px solid #f63e4e;
+            border-radius: 20px;
+         }
+
+         /* The following CSS code styles hover effect for sub-class btn of box class*/
+         .products .card .box .btn:hover
+         {
+            cursor: pointer;
+            background-color: #f63e4e;
+            color: white;
+         }
+
+         /*single product*/
+         /* The following CSS code styles prodetails id*/
+         #prodetails
+         {
+            display: flex;
+            margin-top: 20px;
+         }
+
+         /* The following CSS code styles the sub-class single-pro-image prodetails id*/
+         #prodetails .single-pro-image
+         {
+            width: 40%;
+            margin-right: 50px;
+         }
+
+         /* The following CSS code styles small-img-group class*/
+         .small-img-group
+         {
+            display: flex;
+            justify-content: space-between;
+         }
+
+         /* The following CSS code styles small-img-col class*/
+         .small-img-col
+         {
+            flex-basis: 24%;
+            cursor: pointer;
+         }
+
+         /* The following CSS code styles small-pro-details class of the prodetails id*/
+         #prodetails .single-pro-details
+         {
+            width: 50%;
+            padding-top: 30px;
+         }
+
+         /* The following CSS code styles the texts of small-pro-details class of the prodetails id*/
+         #prodetails .single-pro-details h4
+         {
+            padding: 40px 0 20px 0;
+         }
+
+         #prodetails .single-pro-details h2
+         {
+            font-size: 26px;
+         }
+
+         /* The following CSS code styles the select of small-pro-details class of the prodetails id*/
+         #prodetails .single-pro-details select
+         {
+            display: block;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+         }
+
+         /* The following CSS code styles the input of small-pro-details class of the prodetails id*/
+         #prodetails .single-pro-details input
+         {
+            width: 50px;
+            height: 47px;
+            padding-left: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+         }
+
+         #prodetails .single-pro-details input:focus
+         {
+            outline: none;
+         }
+
+         /* The following CSS code styles the span of small-pro-details class of the prodetails id*/
+         #prodetails .single-pro-details span
+         {
+            line-height: 25px;
+         }
+
+         /* The following CSS code styles the button of small-pro-details class of the prodetails id*/
+         #prodetails .single-pro-details button
+         {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+         }
+
+         /* The following CSS code styles shopnow class of the prodetails id*/
+         #prodetails .shopnow
+         {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+         }
+
+         /* The following CSS code styles the button of shop class*/
+         .shop button
+         {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            left: 45%;
+         }
+      </style>
+   </head>
+   <body>
+      <!--div is used as container for HTML elements-->
+      <!--if your element has class attribute then you will be able to write a CSS rule to select that class-->
+      <section id="header1">
+         <img src="../images/lens.png" class="logo" width="200px" height="100px" class="photo">
+         <!--nav tag defines a set of navigation links-->
+         <div>
+            <ul id="navbar">
+               <li><a class="#"href="../index.html">Home</a></li>
+               <li><a class="active" href="product.html">Products</a></li>
+               <li><a href="blog1.html">Blogs</a></li>
+               <li><a href="portfolio.html">About Us</a></li>
+               <li><a href="research.html">Research</a></li>
+               <li><a href="contact">Contact</a></li>
+               <li class="checkout">
+                  <a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+               </li>
+            </ul>
+         </div>
+      </section>
+      <section class="content">
+         <h1>New Products<br> Arrivals</h1>
+         <p>Get the best quality Cameras</p>
+         <!--Button to go to the Shop Carts-->
+         <a href="#productss"><button>Shop Now</button></a>
+      </section>
+      <!--Accessories Start Here-->
+      <h1 class="pheading" id="productss">Our Latest Products</h1>
+      <section class="sec">
+         <div class="products">
+            <!---card start-->
+            <div class="card" onclick="window.location.href='sproduct.html'">
+               <div class="img"><img src="../images/1.png"></div>
+               <div class="desc">Mirrorless Camera</div>
+               <div class="title1">
+                  Panasonic DC-G9LK LUMIX
+               </div>
+               <div class="box">
+                  <div class="price">NRS.1,497,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/2-removebg-preview.png"></div>
+               <div class="desc">Instant Camera</div>
+               <div class="title1">
+                  Polaroid Originals
+               </div>
+               <div class="box">
+                  <div class="price">NRS.86,000.03</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/3.png"></div>
+               <div class="desc">DSLR</div>
+               <div class="title1">
+                  Canon EOS Rebel T7
+               </div>
+               <div class="box">
+                  <div class="price">NRS.429,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/4-removebg-preview.png"></div>
+               <div class="desc">Mirrorless Camera</div>
+               <div class="title1">Sony Alpha 1</div>
+               <div class="box">
+                  <div class="price">NRS.6,498,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/5-removebg-preview.png"></div>
+               <div class="desc">Instant Print Camera</div>
+               <div class="title1">KODAK Printomatic</div>
+               <div class="box">
+                  <div class="price">NRS.49,000.99</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/6-removebg-preview.png"></div>
+               <div class="desc">Digital Camera</div>
+               <div class="title1">KODAK PIXPRO FZ55-BL</div>
+               <div class="box">
+                  <div class="price">NRS.95,000.40</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/7-removebg-preview.png"></div>
+               <div class="desc">Mirrorless Camera</div>
+               <div class="title1">Panasonic LUMIX 695D 20.3 Megapixel</div>
+               <div class="box">
+                  <div class="price">NRS.697,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/8-removebg-preview.png"></div>
+               <div class="desc">Mirrorless Camera</div>
+               <div class="title1">Sony Alpha 7 IV Full-Frame</div>
+               <div class="box">
+                  <div class="price">NRS.4,698,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/9-removebg-preview.png"></div>
+               <div class="desc">Digital Camera</div>
+               <div class="title1">Panasonic LUMIX FZ300 Long Zoom</div>
+               <div class="box">
+                  <div class="price">NRS.5,477,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/10-removebg-preview.png"></div>
+               <div class="desc">Digital Camera</div>
+               <div class="title1">KODAK PIXPRO Astro Zoom AZ425-BK</div>
+               <div class="box">
+                  <div class="price">NRS.192,000.53</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/11-removebg-preview.png"></div>
+               <div class="desc">Digital Camera</div>
+               <div class="title1">KODAK PIXPRO Astro Zoom AZ405-BK</Aside></div>
+               <div class="box">
+                  <div class="price">NRS.189,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/12-removebg-preview.png"></div>
+               <div class="desc">Mirrorless Camera</div>
+               <div class="title1">Sony Alpha a6400</div>
+               <div class="box">
+                  <div class="price">NRS.1,298,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/13-removebg-preview.png"></div>
+               <div class="desc">Video Camera</div>
+               <div class="title1">Panasonic LUMIX FZ80 4K</div>
+               <div class="box">
+                  <div class="price">NRS.397,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/14-removebg-preview.png"></div>
+               <div class="desc">Mirrorless Camera</div>
+               <div class="title1">Canon EOS R5 Full-Frame</div>
+               <div class="box">
+                  <div class="price">NRS.4,799,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/15-removebg-preview.png"></div>
+               <div class="desc">Mirrorless Camera</div>
+               <div class="title1">Sony Alpha 7</div>
+               <div class="box">
+                  <div class="price">NRS.1,398,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+            <!---card start-->
+            <div class="card" onclick="window.location.href='#'">
+               <div class="img"><img src="../images/16-removebg-preview.png"></div>
+               <div class="desc">Digital Camera</div>
+               <div class="title1">Minolta Pro Shot</div>
+               <div class="box">
+                  <div class="price">NRS.380,000</div>
+                  <button class="btn">Buy Now</button>
+               </div>
+            </div>
+            <!---card end-->
+         </div>
+         </div> 
+      </section>
+      <a href="product2.html" class="shop"><button>Shop Accessories</button></a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <footer class="section1">
+         <div class="col">
+            <img class="logo" src="../images/lens.png">
+         </div>
+         <div class="col-1">
+            <h4>About Us</h4>
+            <a href="#">About Us</a><br>
+            <a href="#">Contact Us</a><br>
+            <a href="#">Blog</a><br>
+            <a href="#">Research</a>
+         </div>
+         <div class="col-2">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+         </div>
+         <div class="col-3">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+               <img src="../images/logo7.jpg">
+               <img src="../images/logo8.jpg">
+            </div>
+            <p>Secured Way For Payments</p>
+            <div class="elogo">
+               <img src="../images/logo9.jpg">
+            </div>
+         </div>
+         <div class="col-4">
+            <h4>Contact</h4>
+            <p><strong><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></strong>Kamal Marg, Kathmandu 44600</p>
+            <p><strong><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></strong>+977 9818230012, +977 9751123456</p>
+            <p><strong><a href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i></a> </strong>9.00 AM - 6.00 PM, Sun - Fri</p>
+            <div class="follow">
+               <h4>Follow Us</h4>
+               <div class="icon">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-instagram"></i>
+                  <i class="fa fa-pinterest"></i>
+                  <i class="fa fa-youtube"></i>
+               </div>
+            </div>
+         </div>
+         <div class="copyright">
+            <p><b>&copy; Third Eye E-cam Store</b></p>
+         </div>
+      </footer>
+   </body>
+</html>

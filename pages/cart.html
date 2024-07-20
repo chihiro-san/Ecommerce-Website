@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-------standard meta tag--------->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Third Eye E-commerce store</title>
+      <meta name="description" content="Just Basic Html"/>
+      <meta name="keywords" content="Html"/>
+      <meta name="aurthor" content="Team3"/>
+      <!-----This is link for google fonts------>	
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <!-----external css link----->
+
+      <link rel="stylesheet" type="text/css" href="../pages/../css/style.css">
+
+      <style type="text/css">
+         * 
+         {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto serif khojki', serif;
+         }
+         h1 
+         {
+            font-size: 50px;
+            line-height: 64px;
+         }
+         h2 
+         {
+            font-size: 46px;
+            line-height: 54px;
+         }
+         h4 
+         {
+            font-size: 20px;
+         }
+         h6
+         {
+            font-weight: 700;
+            font-size: 12px;
+         }
+         p 
+         {
+            font-size: 34px;
+            color: black;
+            margin: 15px 0 20px 0;
+         }
+         .section-p1 
+         {
+            padding: 40px 80px;
+         }
+         .section-m1 
+         {
+            margin: 40px 0;
+         }
+         body 
+         {
+            width: 100%0;
+         }
+
+         /* The following CSS code styles the header */
+         #header 
+         {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1px 1px;
+            background-color: #ECF0F1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+            font-size: 12px;
+            height: 13%;
+         }
+
+            /* The following CSS code styles the navbar */
+         #navbar 
+         {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+         /* The following CSS code styles the list items within the navbar */
+         #navbar li 
+         {
+            list-style: none;
+            padding: 0 20px;
+            position: relative;
+         }
+
+         /* The following CSS code styles the links within the navbar */
+         #navbar li a 
+         {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #3c5b9a;
+            transition: 0.3s ease;
+         }
+
+         /* The following CSS code styles the links within the navbar on hover */
+         #navbar li a:hover,
+         #navbar li a.active
+         {                 
+            color: green;
+         }
+
+         /* The following CSS code styles the content that appears after the links within the navbar on hover and when active */
+         #navbar li a.active::after,
+         #navbar li a:hover::after 
+         {
+            content: "";
+            width: 30%;
+            height: 2px;
+            background-color: green;
+            position: absolute;
+            bottom: -4px;
+            left: 20px;
+         }
+
+         /* The following code styles the page header*/ 
+         #page-header 
+         {
+            background-image: url("../images/mi.jpg");
+            width: 100%;
+            height: 85vh;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+         }
+
+         /* The following code style the cart table*/ 
+         #cart table
+         {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            white-space: nowrap;
+         }
+
+         /* The following code styles the img within cart table*/ 
+         #cart table img
+         {
+            width: 70px;
+         }
+
+         /* The following code styles the td within cart table*/ 
+         #cart table  td:nth-child(1)
+         {
+            width: 100px;
+            text-align: center;
+         }
+
+         /* The following code styles the page header*/ 
+         #cart table  td:nth-child(2)
+         {
+            width: 150px;
+            text-align: center;
+         }
+         #cart table  td:nth-child(3)
+         {
+            width: 250px;
+            text-align: center;
+         }
+         #cart table  td:nth-child(4)
+         {
+            width: 150px;
+            text-align: center;
+         }
+         #cart table  td:nth-child(5)
+         {
+            width: 150px;
+            text-align: center;
+         }
+         #cart table  td:nth-child(5) input 
+         {
+            width: 70px;
+            padding: 10px 5px 10px 15px;
+         }
+         #cart table  td:nth-child(6)
+         {
+            width: 150px;
+            text-align: center;
+         }
+
+         /* The following code styles the thead within cart table*/ 
+         #cart table thead 
+         {
+            border: 1px solid #e2e9e1;
+            border-left: none;
+            border-right: none;
+         }	
+
+         /* The following code styles the td within the cart table*/ 
+         #cart table thead td
+         {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            padding: 18px 0;
+         }
+
+         /* The following code styles the td within cart table*/ 
+         #cart table tbody tr td
+         {
+            padding-top: 15px;
+         }
+
+         /* The following code styles the td within cart table*/ 
+         #cart table tbody td
+         {
+            font-size: 15px;
+         }
+
+         /* The following code styles the cart-add*/ 
+         #cart-add
+         {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+         }
+         /* The following code styles the coupon within cart-add id*/ 
+         #cart-add #coupon
+         {
+            width: 50%;
+            margin-bottom: 30px;
+         }
+         #coupon h3,
+         #Subtotal h3 
+         {
+            padding-bottom: 15px;
+         }
+
+         /* The following code styles the input within coupon id*/ 
+         #coupon input 
+         {
+            padding: 10px 20px;
+            outline: none;
+            width: 60%;
+            margin-right: 10px;
+            border: 1px solid #e2e9e1;
+         }
+
+         /* The following code styles the button within coupon id*/ 
+         #coupon button
+         {
+            background-color: #088178;
+            color: #fff;
+            border: 10px solid #088178;
+            width: 20%;
+         }
+
+         /* The following code styles the button within Subtotal id*/ 
+         #Subtotal button 
+         {
+            background-color: #088178;
+            color: #fff;
+            border: 10px solid #088178;
+            width: 40%;
+         }
+
+         /* The following code styles the Subtotal*/ 
+         #Subtotal 
+         {
+            width: 50%;
+            margin-bottom: 30px;
+            border: 1px solid #e2e9e1;
+            padding: 30px;
+         }
+
+         /* The following code styles the table within Subtotal id*/ 
+         #Subtotal table 
+         {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+         }
+
+         /* The following code styles the table td within Subtotal id*/ 
+         #Subtotal table td 
+         {
+            width: 50%;
+            border: 1px solid #e2e9e1;
+            padding: 10px;
+            font-size: 13px;
+         }
+      </style>
+   </head>
+   <body>
+      <!-------Site Header with naviagtion menu------->
+      <section id="header">
+         <!------ Insert a logo of e-cam store------>
+         <a href="#"><img src="../images/lens.png" class="logo" alt="" width="200px" height="100px"></a>
+         <!----div is used as container for HTML elements---->
+         <div>
+            <!----The <ul> HTML element represents an unordered list of items,typically rendered as a bulleted list---->
+            <ul id="navbar">
+               <!---The href attribute specifies the URL of the page the link goest to--->
+               <!---The <li> HTML element is used to represent an item in a list--->
+               <li><a href="../index.html">Home</a></li>
+               <li><a href="product.html">Products</a></li>
+               <li><a href="blog1.html">Blogs</a></li>
+               <li>
+                  <a href="portfolio.html">
+                     About Us
+               </li>
+               <li><a href="research.html">Research</a></li>
+               <li><a href="contact.html">Contact</a></li>
+               <li><a class="active" href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+         </div>
+      </section>
+      <!---Site Header ends here---> 
+      <!---id attribute is used to specify a unique id for an HTML element--->
+      <section id="page-header">
+         <h2>#Cart</h2>
+         <p>Add your coupon code & SAVE upto 70%!</p>
+      </section>
+      <!---if your element has class attribute then you will be able to write a CSS rule to select that class--->
+      <section id="cart" class="section-p1">
+         <table width="100%">
+            <thead>
+               <tr style="background-color: #EFEEEE;">
+                  <td>Remove</td>
+                  <td>Image</td>
+                  <td>Product</td>
+                  <td>Price</td>
+                  <td>Quantity</td>
+                  <td>Subtotal</td>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><a href="#"><i  class="fa-solid fa-xmark" style="color:black;"></i></a></td>
+                  <td><img src="../images/10.jpg" alt=""></td>
+                  <td>Nikon Flim Camera</td>
+                  <td>Nrs.60,000.00</td>
+                  <td><input type="number" value="1"></td>
+                  <td>Nrs.60,000.00</td>
+               </tr>
+               <tr>
+                  <td><a href="#"><i class="fa-solid fa-xmark" style="color:black;"></i></a></td>
+                  <td><img src="../images/product3.png" alt=""></td>
+                  <td>Tripod Stand</td>
+                  <td>Nrs.10,000.00</td>
+                  <td><input type="number" value="1"></td>
+                  <td>Nrs.10,000.00</td>
+               </tr>
+               <tr>
+                  <td><a href="#"><i class="fa-solid fa-xmark" style="color:black"></i></a></td>
+                  <td><img src="../images/product6.png" alt=""></td>
+                  <td>Ursa Mini Pro</td>
+                  <td>Nrs.1,00,000.00</td>
+                  <td><input type="number" value="1"></td>
+                  <td>Nrs.1,00,000.00</td>
+               </tr>
+               <tr>
+                  <td><a href="#"><i class="fa-solid fa-xmark" style="color:black";></i></a></td>
+                  <td><img src="../images/product16.png" alt=""></td>
+                  <td>Canon EOS 5D Mark IV profesional DSLR </td>
+                  <td>Nrs.2,00,000.00</td>
+                  <td><input type="number" value="1"></td>
+                  <td>Nrs.2,00,000.00</td>
+               </tr>
+            </tbody>
+         </table>
+      </section>
+      <section id="cart-add" class="section-p1">
+         <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+              <input type="text" placeholder="Enter Your Coupon" id="coupon-id" onkeyup="couponId()">
+               
+               <button onclick="buttonClick()">Apply</button>
+            </div>
+         </div>
+         <script >
+            var coupon = document.getElementById('coupon-id').value;
+
+            function buttonClick(){
+                  
+                    alert("Your coupon had been set") 
+                  }             
+         </script>
+         <div id="Subtotal" style="background-color: #EFEEEE">
+            <h3>Cart Totals</h3>
+            <table>
+               <tr style="background-color: #ffffff">
+                  <td>Cart Subtotal</td>
+                  <td>Nrs.3,70,000.00</td>
+               </tr>
+               <tr style="background-color: #ffffff">
+                  <td>Shipping</td>
+                  <td>Free</td>
+               </tr>
+               <tr style="background-color: #ffffff">
+                  <td><strong>Total</strong></td>
+                  <td><strong>Nrs.3,70,000.00</strong></td>
+               </tr>
+            </table>
+            <div>
+            <button onclick="handlebuttonClick()">Proceed to checkout</button>
+
+         </div>
+         </div>
+         <script>
+            var coupon = document.getElementById('proceedId').value;
+
+            function handlebuttonClick(){
+                  
+                    alert("Thank You") 
+                  }    
+            </script>
+         <!----------------footer---------------->
+         <footer class="section1">
+            <div class="col">
+               <img class="logo" src="../images/lens.png">
+            </div>
+            <div class="col-1">
+               <h4>About Us</h4>
+               <a href="#">About Us</a><br>
+               <a href="#">Contact Us</a><br>
+               <a href="#">Blog</a><br>
+               <a href="#">Research</a>
+            </div>
+            <div class="col-2">
+               <h4>My Account</h4>
+               <a href="#">Sign In</a>
+               <a href="#">View Cart</a>
+            </div>
+            <div class="col-3">
+               <h4>Install App</h4>
+               <p>From App Store or Google Play</p>
+               <div class="row">
+                  <img src="../images/logo7.jpg">
+                  <img src="../images/logo8.jpg">
+               </div>
+               <p>Secured Way For Payments</p>
+               <div class="elogo">
+                  <img src="../images/logo9.jpg">
+               </div>
+            </div>
+            <div class="col-4">
+               <h4>Contact</h4>
+               <!---<strong>HTML element indicates that its contents have strong importance,seriousness,or urgency--->
+               <p><strong><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></strong>Kamal Marg, Kathmandu 44600</p>
+               <p><strong><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></strong>+977 9818230012, +977 9751123456</p>
+               <p><strong><a href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i></a> </strong>9.00 AM - 6.00 PM, Sun - Fri</p>
+               <div class="follow">
+                  <h4>Follow Us</h4>
+                  <div class="icon">
+                     <i class="fa-brands fa-facebook-f"></i>
+                     <i class="fa-brands fa-twitter"></i>
+                     <i class="fa-brands fa-instagram"></i>
+                     <i class="fa-brands fa-pinterest"></i>
+                     <i class="fa-brands fa-youtube"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <p><b>&copy; Third Eye E-cam Store</b></p>
+            </div>
+         </footer>
+      </section>
+   </body>

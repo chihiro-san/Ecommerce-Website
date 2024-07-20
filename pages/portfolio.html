@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Personal portfolio</title>
+      <script src="https://kit.font-awesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <link rel="stylesheet" type="text/css" href="../pages/../css/style.css">
+
+      <style type="text/css">
+         /*overall styles*/
+         *
+         {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         /*paragraph styles*/
+         p 
+         {
+            text-align: justify;
+         }
+
+         /*HTML Styles*/
+         html
+         {
+            scroll-behavior: smooth;
+         }
+
+         /*body styles*/
+         body
+         {
+            background: radial-gradient(#fff, #EFEEEE);
+            color: rgb(0, 0, 0);
+         }
+         
+         .header-text
+         {
+            margin-top: 20%;
+            font-size: 30px;
+         }
+
+         .header-text h1
+         {
+            font-size: 60px;
+            margin-top: 20px;
+         }
+
+         .header-text h1 span
+         {
+            color: red;
+         }
+
+         /*---------about--------------*/
+         /* The following CSS code styles the about id*/
+         #about
+         {
+            padding: 80px 0;
+            color: #0a0000;
+            margin-top: 20px;
+         }
+
+         /* The following CSS code styles row class */
+         .row
+         {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            padding-left: 20px;
+            padding-right: 20px;  
+         }
+
+         /* The following CSS code styles the about-col-1 class */
+         .about-col-1
+         {
+            flex-basis: 35%;
+         }
+
+         /* The following CSS code styles image of the about-col-1 class */
+         .about-col-1 img
+         {
+            width: 90%;
+            border-radius: 15px;
+         }
+
+         /* The following CSS code styles the about-col-2 class */
+         .about-col-2
+         {
+            flex-basis: 60%;
+         }
+
+         /* The following CSS code styles the sub-title class */
+         .sub-title
+         {
+            font-size: 60px;
+            font-weight: 600;
+            color: rgb(0, 0, 0);
+            align-items: center;
+            position: absolute;
+            right: 40%;
+         }
+
+         .text
+         {
+            text-align: justify;
+         }
+
+         /* The following CSS code styles the tab-titles class */
+         .tab-titles
+         {
+            display: flex;
+            margin: 30px 20px 40px;
+         }
+
+         /* The following CSS code styles the tab-links class */
+         .tab-links
+         {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+         }
+
+         /* The following CSS code styles the tab-links hover effect*/
+         .tab-links::after
+         {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #E74646;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+         }
+
+         /* The following CSS code styles the tab-links hover effect*/
+         .tab-links.active-link::after
+         {
+            width: 50%;
+         }
+
+         /* The following CSS code styles the listin of tab-contents class*/
+         .tab-contents ul li
+         {
+            list-style: none;
+            margin: 10px 0;
+         }
+
+         .tab-contents ul li span
+         {
+            color: #E74646;
+            font-size: 14px;
+         }
+
+         .tab-contents
+         {
+            display: none;
+         }
+
+         .tab-contents.active-tab
+         {
+            display: block;
+            margin: 30px 20px 40px;
+         }
+
+         /*Services*/
+         /* The following CSS code styles the id services*/
+         #services
+         {
+            padding: 30px 0 ;
+         }
+
+         /* The following CSS code styles the services-list class*/
+         .services-list
+         {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+         }
+
+         /* The following CSS code styles the services-list class including the div tag*/
+         .services-list div
+         {
+            background: fixed radial-gradient(#fff, #f5f5f5);
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: background 0.5s, transform 0.5s;
+         }
+
+         /* The following CSS code styles the services-list class including the div tag with icon*/
+         .services-list div i
+         {
+            font-size: 50px;
+            margin-bottom: 30px;
+         }
+
+         /* The following CSS code styles the services-list class and its listing*/
+         .services-list div h2
+         {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 15px;
+         }
+
+         .services-list div a
+         {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+         }
+
+         .services-list div:hover
+         {
+            background: #ECF0F1;
+            transform: translate(-10px);
+         }
+
+         /*----portfolio----*/
+         /* The following CSS code styles the portfolio id*/
+         #portfolio
+         {
+            padding: 50px 0;
+         }
+
+         /* The following CSS code styles the work-list class*/
+         .work-list
+         {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;   
+         }
+
+         /* The following CSS code styles the work class*/
+         .work
+         {
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+         }
+
+         /* The following CSS code styles image of the work class*/
+         .work img
+         {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            transition: transform 0.5s;
+         }
+
+         /* The following CSS code styles the layer class*/
+         .layer
+         {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgba(0,0,0,0.6), #ECF0F1);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            font-size: 14px;
+            transition: height 0.5s;
+         }
+
+         /* The following CSS code styles header text of the layer class*/
+         .layer h3
+         {
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #fff;
+         }
+
+         /* The following CSS code styles paragraph of the work class*/
+         .layer p
+         {
+            color: #fff;
+         }
+
+         /* The following CSS code styles link tag of the work class*/
+         .layer a
+         {
+            margin-top: 20px;
+            color: #E74646;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 60px;
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+         }
+
+         /* The following CSS code styles hover effect for the image of the work class*/
+         .work:hover img
+         {
+            transform: scale(1.1);
+         }
+
+         .work:hover .layer
+         {
+            height: 100%;
+         }
+
+         /* The following CSS code styles the btn class*/
+         .btn{
+            display: block;
+            margin: 50px auto;
+            width: fit-content;
+            border: 1px solid #E74646;
+            padding: 14px 50px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            transition: background 0.5s;
+         }
+
+         /* The following CSS code styles hover effect the btn class*/
+         .btn:hover
+         {
+            background: #E74646;
+         }
+
+         /*---contact----*/
+         /* The following CSS code styles the contact-left class*/
+         .contact-left
+         {
+            flex-basis: 35%;
+         }
+
+         /* The following CSS code styles the contact-right class*/
+         .contact-right
+         {
+            flex-basis: 60%;
+         }
+
+         /* The following CSS code styles paragraph of the contact-left class*/
+         .contact-left p
+         {
+            margin-top: 30px;
+         }
+
+         /* The following CSS code styles icon within the paragraph of the contact-left class*/
+         .contact-left.p .i
+         {
+            color: #E74646;
+            margin-right: 15px;
+            font-size: 25px;
+         }
+
+         /* The following CSS code styles the social-icon class*/
+         .social-icons
+         {
+            margin-top: 3opx;
+         }
+
+         .social-icons a
+         {
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: #ababab;
+            display: inline-block;
+            transition: transform 0.5s;
+         }
+
+         .social-icons a:hover
+         {
+            color: #dadfe8;
+            transform: translateY(-5px);
+         }
+
+         /* The following CSS code styles the btn btn2 class*/
+         .btn.btn2
+         {
+            display: inline-block;
+            background: #E74646;
+            color: white;
+         }
+
+         /* The following CSS code styles form of the contact-right class*/
+         .contact-right form
+         {
+         width: 100%;
+         }
+
+         /* The following CSS code styles the form*/
+         form input, form textarea
+         {
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #ffffff;
+            padding: 15px;
+            margin: 15px 0;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            border-radius: 6px;
+         }
+
+         form .btn2
+         {
+            padding: 14px 60px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            color: white;
+         }
+
+         footer .copyright p
+         {
+            font-size: 20px;
+            margin-left: 44%;
+         }
+
+      </style>
+   </head>
+   <body>
+      <section id="header1">
+         <img src="../images/lens.png" class="logo" alt="Website logo" width="200px" height="100px">
+         <!--nav tag defines a set of navigation links-->
+         <div>
+            <ul id="navbar">
+               <li><a class="#"href="../index.html">Home</a></li>
+               <li><a href="product.html">Products</a></li>
+               <li><a href="blog1.html">Blogs</a></li>
+               <li><a class="active" href="portfolio.html" class="ABOUTUS">About Us</a></li>
+               <li><a href="research.html">Research</a></li>
+               <li><a href="contact.html">Contact</a></li>
+               <li class="checkout">
+                  <a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+               </li>
+            </ul>
+         </div>
+      </section>
+      <!------about------> 
+      <div id="about">
+         <div class="container">
+            <div class="row">
+               <div class="about-col-1">
+                  <br><br><br>
+                  <br><br><br>
+                  <img src="../images/figo.jpg" alt="">
+               </div>
+               <div class="about-col-2">
+                  <section id="figo">
+                     <h1 class="sub-title">About Us</h1>
+                     <br><br><br>
+                     <br><br><br>
+                     <p><h3 class="text">Hello, I’m Figo, a student of Islington College. I'm presently majoring in networking and website development. I have a solid foundation in HTML, CSS, and JavaScript thanks to the excellent teaching techniques of my college's instructors, and I'm always developing my abilities to stay on top of the most recent online technology. I have expertise creating websites that are responsive, mobile-friendly, and look amazing on all screens. I enjoy learning about new technologies, going to web development conferences, and giving back to the community when I'm not working on web development projects. I am continuously searching for fresh approaches to hone my abilities and knowledge because I really believe in the power of cooperation, creativity, and ongoing learning.</h3>
+                     </p>
+                     <!--Java Script Function is added for this-->
+                     <!--Skill,Experience and Education Tabs-->
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                     </div>
+                     <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                           <li><span>Website Developer</span><br>Basic HTML/CSS</li>
+                           <li><span>Website Developer</span><br>JavaScript</li>
+                           <li><span>Website Developer</span><br>SQL</li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="experience">
+                        <ul>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="education">
+                        <ul>
+                           <li><span>Primary School Level Student</span><br>2010 - 2020 (Basic Computer Science)</li>
+                           <li><span>Secondary School level Student</span><br> 2020 - 2022 (Major in Computer Science)</li>
+                           <li><span>College Student</span><br>2023 - present (Major in Networking)</li>
+                        </ul>
+                     </div>
+                  </section>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Image is Added-->
+      <div id="about">
+         <div class="container">
+            <div class="row">
+               <div class="about-col-1">
+                  <img src="../images/mausam.png" alt="">
+               </div>
+               <div class="about-col-2">
+                  <section id="figo">
+                     <p><h3 class="text">Hello, my name is Mausam Rai, and I'm a cybersecurity major at Islington College. How technology functions and how we might defend against dangers online have always piqued my interest. I have a good foundation in the field of cybersecurity thanks to my grasp of network protocols and programming languages like Python and C++. I like going to cybersecurity conferences to learn about the newest trends and methods. I enjoy volunteering at neighborhood non-profits in my spare time and spreading the word about cybersecurity best practices. In general, I'm passionate about leveraging my abilities and expertise to create a safer online environment.</h3>
+                     </p>
+                     <!--Skill,Experience and Education Tabs-->
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills1')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience1')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education1')">Education</p>
+                     </div>
+                     <div class="tab-contents active-tab" id="skills1">
+                        <ul>
+                           <li><span>Website Developer</span><br>Basic HTML/CSS</li>
+                           <li><span>Website Developer</span><br>JavaScript</li>
+                           <li><span>Website Developer</span><br>SQL</li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="experience1">
+                        <ul>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="education1">
+                        <ul>
+                           <li><span>Primary School Level Student</span><br>2010 - 2020 (Basic Computer Science)</li>
+                           <li><span>Secondary School level Student</span><br> 2020 - 2022 (Major in Computer Science)</li>
+                           <li><span>College Student</span><br>2023 - present (Major in Networking)</li>
+                        </ul>
+                     </div>
+                  </section>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Image is Added-->
+      <div id="about">
+         <div class="container">
+            <div class="row">
+               <div class="about-col-1">
+                  <img src="../images/alina.jpg" alt="">
+               </div>
+               <div class="about-col-2">
+                  <section id="figo">
+                     <p><h3 class="text">Greetings, I'm Alina Mahat and I'm an Islington College student majoring in database administration. I have a knack for organizing and managing data, which led me to pursue a career in database administration. I have a solid foundation in SQL and data modeling, which has allowed me to design and manage databases for a variety of clients. In my free time, I enjoy attending database conferences and staying up-to-date with the latest trends and techniques. I also enjoy giving back to the community by volunteering my time and expertise to local non-profits that need help organizing and managing their data. Overall, I'm passionate about using my skills and knowledge to help organizations operate more efficiently and effectively.</h3>
+                     </p>
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills2')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience2')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education2')">Education</p>
+                     </div>
+                     <!--Skill-->
+                     <div class="tab-contents active-tab" id="skills2">
+                        <ul>
+                           <li><span>Website Developer</span><br>Basic HTML/CSS</li>
+                           <li><span>Website Developer</span><br>JavaScript</li>
+                           <li><span>Website Developer</span><br>SQL</li>
+                        </ul>
+                     </div>
+                     <!--Experience-->
+                     <div class="tab-contents" id="experience2">
+                        <ul>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                           <li><span>Website Developer</span><br>Designing web/app</li>
+                        </ul>
+                     </div>
+                     <!--Education-->
+                     <div class="tab-contents" id="education2">
+                        <ul>
+                           <li><span>Primary School Level Student</span><br>2010 - 2020 (Basic Computer Science)</li>
+                           <li><span>Secondary School level Student</span><br> 2020 - 2022 (Major in Computer Science)</li>
+                           <li><span>College Student</span><br>2023 - present (Major in Networking)</li>
+                        </ul>
+                     </div>
+                  </section>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--services-->
+      <div id="services">
+         <div class="container">
+            <h1 class="sub-title">Our services</h1>
+            <br>
+            <br>
+            <br>
+            <div class="services-list">
+               <div>
+                  <h2>Web Design</h2>
+                  <p>
+                     I provide a variety of services as a web designer to assist companies and organizations create an online presence and connect with their target markets. My standard approach begins with a consultation to learn about the client's objectives, branding, and target market. I then draw up a site map and wireframes that describe the layout and functioning of the website. I then set to work producing a visual design that is aesthetically pleasing, approachable to users, and follows industry standards for usability and accessibility. After the design has been accepted, I utilize HTML, CSS, and JavaScript to make the design come to life and make sure the website is responsive on a variety of devices. Additionally, I offer continuous upkeep and assistance to make sure the website stays current and satisfies the client's changing requirements. 
+                  </p>
+               </div>
+               <div class="fas fa-crop-alt">
+                  <h2>Web Development</h2>
+                  <p>
+                     My work as a web developer focuses on creating and managing websites and online apps that are customized to my clients' unique requirements. I've worked with several different programming languages and frameworks, including HTML, CSS, JavaScript, React, Angular, Vue, Node.js, and PHP, among others. Understanding the objectives, demands, and budget of the customer is the first step in my development approach. I then create a plan that specifies the project's technology stack, development strategy, and timetable. I collaborate closely with the customer throughout the development process to make sure the website or web application fits their needs and is delivered on schedule and on budget. In order to keep the website or web application operational, I also provide testing, debugging, and continuous maintenance. 
+                  </p>
+               </div>
+               <div class="fas fa-store">
+                  <h2>Website maintainence</h2>
+                  <p>
+                     As a supplier of website maintenance services, it is my responsibility to keep my clients' websites current, safe, and functional. Regular upgrades to the website's software, plugins, and content are included in my maintenance services, along with checking for any problems or faults. To guarantee that the data on the website is protected in case of any unanticipated complications, I also regularly backup the website. I also offer website optimization services to make sure the website is operating at its best, with quick load times and the best user experience. I collaborate closely with my clients to comprehend their unique needs and create a maintenance strategy that matches their schedule and budget.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--------portfolio------->
+      <div id="portfolio">
+         <div class="container">
+            <!--Work Page with Screenshots-->
+            <h1 class="sub-title">Our Work</h1>
+            <br>
+            <br>
+            <br>
+            <div class="work-list">
+               <div class="work">
+                  <img src="../images/Screenshot (40).png">
+                  <div class="layer">
+                     <h3>Social Media App</h3>
+                     <p>This is the homepage of our latest ecommerce website made by using HTML/CSS and JavaScript.</p>
+                     <a href="../index.html"><i class="fa fa-code" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+               <div class="work">
+                  <img src="../images/product.png">
+                  <div class="layer">
+                     <h3>Social Media App</h3>
+                     <p>This is the product page of our website where you can find the latest products available in our webpage.</p>
+                     <a href="product.html"><i class="fa fa-code" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+               <div class="work">
+                  <img src="../images/Screenshot (222).png">
+                  <div class="layer">
+                     <h3>Social Media App</h3>
+                     <p>This is the contact page where people can contact us regarding about our page and our products.</p>
+                     <a href="contact.html"><i class="fa fa-code" aria-hidden="true"></i>
+                     </i></a>
+                  </div>
+               </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+         </div>
+      </div>
+      <!---contact-->
+      <div id="contact">
+         <div class="row">
+            <div class="contact-left">
+               <h1 class="sub-title">Login</h1>
+               <a href="figo.html" class="btn btn2">Figo's CV</a><br>
+               <a href="mausam.html" class="btn btn2">Mausam Rai's CV</a><br>
+               <a href="alina.html" class="btn btn2">Alina Mahat's CV</a>
+            </div>
+            <div class="contact-right">
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <!--Form with Validation-->
+               <form>
+                  <input type="text" placeholder="Your Name" id="login-name" onkeyup="validateName()">
+                  <span id="name-error"></span>
+                  <input type="text" placeholder="Your Email" id="login-email" onkeyup="validateEmail()">
+                  <span id="email-error"></span>
+                  <input type="text" placeholder="Password" id="login-password" onkeyup="validatePassword()">
+                  <span id="password-error"></span>
+                  <button type="button" onclick="validateForm()" class="btn btn2">Login</button>
+                  <span id="login-error"></span>
+               </form>
+               <script>
+                  // Function to validate the form inputs
+                  function validateForm() {
+                    // Retrieve the form input elements and the error element
+                    var nameInput = document.getElementById("login-name");
+                    var emailInput = document.getElementById("login-email");
+                    var passwordInput = document.getElementById("login-password");
+                    var loginError = document.getElementById("login-error");
+                  
+                    // Check if any of the form inputs fail validation
+                    if (nameInput.value === "" || !/^[a-zA-Z\s]+$/.test(nameInput.value) ||
+                        emailInput.value === "" || !/^\S+@\S+\.\S+$/.test(emailInput.value) ||
+                        passwordInput.value === "" || passwordInput.value.length < 8) {
+                      loginError.textContent = "Please fill in all fields correctly";
+                    } else {
+                      // Clear the error message if all inputs pass validation
+                      loginError.textContent = "";
+                  
+                      // Display a "Thank you" message as a popup alert
+                      alert("Thank you!");
+                  
+                      // You can perform additional actions or submit the form here
+                    }
+                  }
+               </script>
+            </div>
+         </div>
+      </div>
+      <footer class="section1">
+         <div class="col">
+            <img class="logo" src="../images/lens.png">
+         </div>
+         <div class="col-1">
+            <h4>About Us</h4>
+            <a href="#">About Us</a><br>
+            <a href="#">Contact Us</a><br>
+            <a href="#">Blog</a><br>
+            <a href="#">Research</a>
+         </div>
+         <div class="col-2">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+         </div>
+         <div class="col-3">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+               <img src="../images/logo7.jpg">
+               <img src="../images/logo8.jpg">
+            </div>
+            <p>Secured Way For Payments</p>
+            <div class="elogo">
+               <img src="../images/logo9.jpg">
+            </div>
+         </div>
+         <div class="col-4">
+            <h4>Contact</h4>
+            <p><strong><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></strong>Kamal Marg, Kathmandu 44600</p>
+            <p><strong><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></strong>+977 9818230012, +977 9751123456</p>
+            <p><strong><a href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i></a> </strong>9.00 AM - 6.00 PM, Sun - Fri</p>
+            <div class="follow">
+               <h4>Follow Us</h4>
+               <div class="icon">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-instagram"></i>
+                  <i class="fa fa-pinterest"></i>
+                  <i class="fa fa-youtube"></i>
+               </div>
+            </div>
+         </div>
+         <div class="copyright">
+            <p ><b>Third Eye E-cam Store</b></p>
+         </div>
+      </footer>
+      <script>
+         // Retrieve all elements with the class name "tab-links" and store them in the variable "tablinks"
+         var tablinks = document.getElementsByClassName("tab-links");
+         
+         // Retrieve all elements with the class name "tab-contents" and store them in the variable "tabcontents"
+         var tabcontents = document.getElementsByClassName("tab-contents");
+         
+         // Define the function for opening tabs, taking the tab name as a parameter
+         function opentab(tabname){
+           // Remove the "active-link" class from all tab links
+           for(tablink of tablinks){
+             tablink.classList.remove("active-link");
+           }
+         
+           // Remove the "active-tab" class from all tab contents
+           for(tabcontent of tabcontents){
+             tabcontent.classList.remove("active-tab");
+           }
+         
+           // Add the "active-link" class to the clicked tab link
+           event.currentTarget.classList.add("active-link");
+         
+           // Add the "active-tab" class to the corresponding tab content
+           document.getElementById(tabname).classList.add("active-tab");
+         }
+      </script>
+   </body>
+</html>

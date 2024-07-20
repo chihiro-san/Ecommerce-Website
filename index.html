@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!--- standard meta tags --->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Third Eye E-commerce store</title>
+	<meta name="description" content ="Just Basic Html"/>
+	<meta name="keywords" content="HTML"/>
+	<meta name="author" content="Team3"/>
+
+	<!---External css link--->
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!---This is link for google fonts--->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!---Internal JavaScript link--->
+
+	<script>
+
+		// The script initializes a variable named slideIndex to 1, and then calls the showSlides function passing slideIndex as an argument to display the first slide.
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  let i;
+		  let slides = document.getElementsByClassName("mySlides");
+		  let dots = document.getElementsByClassName("dot");
+
+		  // The function first checks if n is greater than the total number of slides, if so it sets slideIndex to 1 to start the slideshow from the beginning.
+		  if (n > slides.length) {slideIndex = 1}
+
+		  // Then it checks if n is less than 1, if so it sets slideIndex to the last slide to loop back to the last slide when the user clicks the previous button on the first slide.
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) 
+		  {
+		  	// It then loops through all the slides and sets their display property to "none" to hide them.
+		    slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) 
+		  {
+		  	// It also loops through all the thumbnail images and removes the "active" class from their className to remove the active styling.
+		    dots[i].className = dots[i].className.replace(" active", "");
+		  }
+
+		  // Then it displays the current slide and adds the "active" class to the corresponding thumbnail image.
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
+</head>
+<body>
+
+	<!---Site Header with navigation menu--->
+    <header>
+    	<section id="header1">
+		<!---Insert a logo of e-cam store--->
+			<img src="images/lens.png" class="logo" alt="Website logo" width="200px" height="100px">
+
+			    <!---div is used as container for HTML elements--->
+		        <div>
+		        	<!---The <ul> HTML element represents an unordered list of items, typically rendered as a bulleted list--->
+		        	<ul id="navbar">
+		        	   <!---The href attribute specifies the URL of the page the link goes to--->
+		        	   <!---The <li> HTML element is used to represent an item in a list--->
+				       <li><a class="active"href="index.html">Home</a></li>
+				       <li><a href="pages/product.html">Products</a></li>
+				       <li><a href="pages/blog1.html">Blogs</a></li>
+				       <li><a href="pages/portfolio.html">About Us</a></li>
+				       <li><a href="pages/research.html">Research</a></li>
+				       <li><a href="pages/contact.html"> Contacts</a></li>
+				       <li class="checkout">
+				       	<a href="pages/cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>   
+			        </ul>
+		        </div>
+	    </section>
+    </header>
+    <!---Site Header ends here--->
+
+	<!--if your element has class attribute then you will be able to write a CSS rule to select that class-->
+
+	<div class="header">
+		<div class="main">
+			<div class="lines">
+
+				<!---Add video in the background--->
+				<video autoplay muted loop id="myVideo">
+	             <source src="images/video.mp4" type="video/mp4">
+	             </video>
+	        </div>
+	    	<div class="overlay"></div>
+			    <div class="text">
+			      <h2>Better pixels at even better prices!</h2> 
+			      <p>Want to buy a camera equipment but can’t find a store which sells thoes items? If so, you’re on the right webpage. Check out the camera equipments along with the brand new camera in our webpage.</p>
+			      <a href="" class="button">Shop Now &#187;</a>
+			    </div>
+	    	</div>    
+	    </div>
+
+<!---Featured Categories--->
+	<div class="categories">
+		<div class="small-container">
+			<h2 class="title">Main Products</h2>
+
+			<!-- Slideshow container --->
+				<div class="slideshow-container">
+
+				  <!-- Full-width images with number -->
+				  <div class="mySlides fade" style="display: block;">
+				    <div class="numbertext">1 / 3</div>
+				    <img src="images/product1.png" style="width: auto;">
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">2 / 3</div>
+				    <img src="images/product2.jpg" style="width:auto;">
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">3 / 3</div>
+				    <img src="images/product3.png" style="width:auto;">
+				  </div>
+
+				  <!-- Next and previous buttons -->
+				  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+				</div>
+				<br>
+
+				<!-- The dots/circles -->
+				<div style="text-align:center">
+				  <span class="dot" onclick="currentSlide(1)"></span>
+				  <span class="dot" onclick="currentSlide(2)"></span>
+				  <span class="dot" onclick="currentSlide(3)"></span>
+				</div>
+		</div>
+	</div>
+<!--------Featured products-------->
+    <div class="small-container1">
+    	<h2 class="title">Featured Products</h2>
+    	<div class="lines">
+    		<div class="line3">
+    			<img src="images/product4.jpg">
+    			<h4>Drone</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.90,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+				</a>
+    		</div>
+    		<div class="line3">
+    			<img src="images/product5.png">
+    			<h4>Nikon Film Camera</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star-half-o"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.60,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+				</a>
+    		</div>
+    		<div class="line3">
+    			<img src="images/product6.png">
+    			<h4>Ursa mini pro 12k</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    			    <i class="fa fa-star"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.1,00,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+				</a>
+    		</div>
+    		<div class="line3">
+    			<img src="images/product7.png">
+    			<h4>LED Panel</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    			    <i class="fa fa-star-o"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.75,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+				</a>
+    		</div>
+    	</div>
+    	<h2 class="title">Latest Products</h2>
+    	<div class="lines">
+    		<div class="line3">
+
+    			<!---Insert product images--->
+    			<img src="images/product11.png">
+    			<h4>Shotgun Microphone</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.50,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+			    </a>
+    		</div>
+    		<div class="line3">
+    			<img src="images/product9.jpg">
+    			<h4>Clip-On-Flash</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star-o"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.65,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+				</a>
+    		</div>
+    		<div class="line3">
+    			<img src="images/product10.jpg">
+    			<h4>Photo & Slide Scanner</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    			    <i class="fa fa-star"></i>
+    				<i class="fa fa-star-half-o"></i>
+    			</div>
+    			<p>Nrs.95,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+			    </a>
+    		</div>
+    		<div class="line3">
+    			<img src="images/product8.jpg">
+    			<h4>Soluna II-60 LED</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    			    <i class="fa fa-star-half-o"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.80,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+    				<div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				   </div>
+				</button>
+			    </a>
+    		</div>
+    		<div class="lines">
+    		<div class="line3">
+    			<img src="images/product12.png">
+    			<h4>Canon RF USM Lens</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.55,000.00</p>
+                <a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+				</a>
+    			  </div>
+    		<div class="line3">
+    			<img src="images/product13.png">
+    			<h4>Fujifiml Instax Mini 12</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star-half-o"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.35,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+				</a>
+    			  </div>
+    		<div class="line3">
+    			<img src="images/product14.png">
+    			<h4>Tilta Nano Wireless Lens</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    			    <i class="fa fa-star"></i>
+    				<i class="fa fa-star-half-o"></i>
+    			</div>
+    			<p>Nrs.85,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+                </button>
+            	</a>
+    			 </div>
+    		<div class="line3">
+    			<img src="images/product15.png">
+    			<h4>Kodak Negative Film</h4>
+    			<div class="rating">
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    				<i class="fa fa-star"></i>
+    			    <i class="fa fa-star-o"></i>
+    				<i class="fa fa-star-o"></i>
+    			</div>
+    			<p>Nrs.30,000.00</p>
+    			<a href="pages/cart.html">
+    			<button class="addtocart">
+				  <div class="pretext">
+				    <i class="fa fa-shopping-cart">&nbsp; Buy Now</i>
+				  </div>
+				</button>
+			    </a>
+    		</div>
+            </div>
+        </div>
+    </div>
+<!------------ Offer ----------->
+	<div class="offer">
+		<div class="small-container">
+			<div class="lines">
+				<div class="line1">
+					<img src="images/product16.png" class="offer-img" width="450px">
+				</div>
+				<div class="line1">
+				<p>Exclusively Available on Third Eye</p>
+				<h1>Canon EF 70 USM</h1>
+				<small>Canon is probably best known as one of the world's leading camera manufacturers. In general, Canon cameras have great ergonomics, intuitive controls and menus, and class-leading autofocus systems, along with a wide selection of lenses that cater to photographers of all kinds.</small><br>
+				<a href="pages/cart.html" class="button">Buy Now &#187;</a>
+			    </div>
+			</div>
+		</div>
+	</div>
+<!--------------Testimonial------------------>
+	<div class="testimonial">
+		<div class="small-container">
+			<div class="lines">
+				<div class="line2">
+					<i class="fa fa-quote-left"></i>
+					<p>At first, I wasn't sure whether any of the products were good enough in comparison to the other I saw on the other websites, but I brought a white canon camera. I was quite startled to see how cheap the price was compared to market price and the quality was also topnotch. </p>
+					<div class="rating">
+	    				<i class="fa fa-star"></i>
+	    				<i class="fa fa-star"></i>
+	    				<i class="fa fa-star"></i>
+	    			    <i class="fa fa-star-half-o"></i>
+	    				<i class="fa fa-star-o"></i>
+	    			</div>
+	    			<img src="images/review1.jpg">
+	    			<h3>KP Sharma Oli</h3>
+				</div>
+				<div class="line2">
+					<i class="fa fa-quote-left"></i>
+					<p>I was looking forward to use QuadAir Drone but I couldn't find it in stores of Nepal. I was surprised when I was saw this product on Third Eye store. I purchased it through their websites. Astonishingly the price was affordable and delivery was done within one day. I must say the service is</p>
+					<div class="rating">
+	    				<i class="fa fa-star"></i>
+	    				<i class="fa fa-star"></i>
+	    				<i class="fa fa-star"></i>
+	    			    <i class="fa fa-star"></i>
+	    				<i class="fa fa-star-half-o"></i>
+	    			</div>
+	    			<img src="images/review2.jpg">
+	    			<h3>Bidya Devi Bhandari</h3>
+				</div>
+				<div class="line2">
+					<i class="fa fa-quote-left"></i>
+					<p>I have used the same brand of lenses for over 5 years and I'm glad I was able to try something new, I loved the design of Nikon lenses and it enhanced my photography. I want to thanks Third Eye E-cam store for these awesome lens and their guidance througout the buying process.</p>
+					<div class="rating">
+	    				<i class="fa fa-star"></i>
+	    				<i class="fa fa-star"></i>
+	    				<i class="fa fa-star"></i>
+	    			    <i class="fa fa-star"></i>
+	    				<i class="fa fa-star-o"></i>
+	    			</div>
+	    			<img src="images/review3.jpg">
+	    			<h3>Joe Biden</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-----------------Brands-------------->
+	<div class="brands">
+		<div class="small-container">
+			<div class="lines">
+				<div class="line4">
+					<img src="images/logo2.png">
+				</div>
+				<div class="line4">
+					<img src="images/logo3.png">
+				</div>
+				<div class="line4">
+					<img src="images/logo5.jpg">
+				</div>
+				<div class="line4">
+					<img src="images/logo4.png">
+				</div>
+				<div class="line4">
+					<img src="images/logo6.jpg">
+				</div>
+			</div>
+		</div>
+	</div>	
+</body>
+<!----------------footer---------------->
+<footer class="section1">
+	<div class="col">
+		<img class="logo" src="images/lens.png">
+	</div>
+	<div class="col-1">
+		<h4>About Us</h4>
+		<a href="#">About Us</a><br>
+		<a href="#">Contact Us</a><br>
+		<a href="#">Blog</a><br>
+		<a href="#">Research</a>
+	</div>
+	<div class="col-2">
+		<h4>My Account</h4>
+		<a href="#">Sign In</a>
+		<a href="#">View Cart</a>
+	</div>
+	<div class="col-3">
+		<h4>Install App</h4>
+		<p>From App Store or Google Play</p>
+		<div class="row">
+			<img src="images/logo7.jpg">
+			<img src="images/logo8.jpg">
+		</div>
+		<p>Secured Way For Payments</p>
+		<div class="elogo">
+			<img src="images/logo9.jpg">
+		</div>
+	</div>
+	<div class="col-4">
+		<h4>Contact</h4>
+
+		<!-- <strong> HTML element indicates that its contents have strong importance, seriousness, or urgency--->
+		<p>
+			<strong><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></strong>Kamal Marg, Kathmandu 44600
+		</p>
+		<p>
+			<strong><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></strong>+977 9818230012, +977 9751123456
+		</p>
+		<p>
+			<strong><a href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i></a> </strong>9.00 AM - 6.00 PM, Sun - Fri
+		</p>
+		<div class="follow">
+			<h4>Follow Us</h4>
+			<div class="icon">
+				<i class="fa fa-facebook"></i>
+				<i class="fa fa-twitter"></i>
+				<i class="fa fa-instagram"></i>
+				<i class="fa fa-pinterest"></i>
+				<i class="fa fa-youtube"></i>
+			</div>
+		</div>
+	</div>
+	<div class="copyright">
+		<p><b>&copy; Third Eye E-cam Store</b></p> 
+	</div>
+</footer>
+</html>

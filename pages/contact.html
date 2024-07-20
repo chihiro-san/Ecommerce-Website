@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-------standard meta tag--------->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Third Eye E-commerce store</title>
+      <meta name="description" content="Just Basic Html"/>
+      <meta name="keywords" content="Html"/>
+      <meta name="aurthor" content="Team3"/>
+      <!-----This is link for google fonts------>	
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <!-----external css link----->	
+
+      <link rel="stylesheet" type="text/css" href="../pages/../css/style.css">
+
+      <style type="text/css">
+         * 
+         {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto serif khojki', serif;
+         }
+
+         h1 
+         {
+            font-size: 50px;
+            line-height: 64px;
+            color: black;
+         }
+
+         h2 
+         {
+            font-size: 46px;
+            line-height: 54px;
+            color: black;
+         }
+
+         h4 
+         {
+            font-size: 20px;
+            color: black;
+         }
+
+         h6 
+         {
+            font-weight: 700;
+            font-size: 12px;
+         }
+
+         p 
+         {
+            font-size: 34px;
+            color: black;
+            margin: 15px 0 20px 0;
+         }
+
+         .section-p1 
+         {
+            padding: 40px 80px;
+         }
+
+         .section-m1 
+         {
+            margin: 40px 0;
+         }
+
+         body 
+         {
+            width: 100% 0;
+         }
+
+         /* The following CSS code styles the header */
+         #header 
+         {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1px 1px;
+            background-color: #ECF0F1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 13%;
+         }
+
+         /* The following code styles the page header*/ 
+         #page-header 
+         {
+            background-image: url("../images/ali.jpg");
+            width: 100%;
+            height: 85vh;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+         }
+
+         /*The following code styles the contact-details*/
+         #contact-details 
+         {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px;
+         }
+
+         /*The following code styles the details within the contact-details id */
+         contact-details .details 
+         {
+            width: 40%;
+         }
+
+         /*The following code styles the span within contact-details id*/
+         #contact-details .details span,
+         #form-details form span  
+         {
+            font-size: 12px;
+         }
+
+         /*The following code styles the form h2 within  contact-details id*/
+         #contact-details .details h2,
+         #form-details form h2 
+         {
+            font-size: 26px;
+            line-height: 35px;
+            padding: 20px 0;
+         }
+
+         /*The following code styles the form h2 within  contact-details id*/
+         #contact-details .details h3 
+         {
+            font-size: 16px;
+            padding bottom: 15px;
+         }
+
+         /*The following code styles the 
+         <li>
+            within  contact-details id*/
+            #contact-details .details li 
+         {
+            list-style: none;
+            display: flex;
+            padding: 10px 0;
+         }
+
+         /*The following code styles the <i> within  contact-details id*/
+         #contact-details .details li i 
+         {
+            font-size: 14px;
+            padding-right: 22px;
+            color: black;
+         }
+
+         /*The following code styles image within  contact-details id*/
+         #contact-details .details li image 
+         {
+            width: 2%;
+            height: 1px;
+            padding: 3px;
+         }
+
+         /*The following code styles 
+         <p> within  contact-details id*/
+         #contact-details .details li p 
+         {
+            margin: 0;
+            font-size: 14px;
+         }
+
+         /*The following code styles the map within  contact-details id*/
+         #contact-details .map
+         {
+            width: 65%;
+            height: 500px;
+            padding: 80px;
+         }
+
+         /*The following code styles the iframe within the map class*/
+         #contact-details .map iframe
+         {
+            width: 120%;
+            height: 100%;
+         }
+
+         /*The following code styles the  form-details id*/
+         #form-details 
+         {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            height: 100vh;
+            background-color: #EFEEEE;
+            padding : 100px;
+            margin: 90px;
+         }
+
+         /*The following code styles the form within  form-details id*/
+         #form-details form 
+         {
+            width: 100%;
+            max-width: 600px;
+            padding: 50px 30px 20px;
+            background: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+         }
+
+         /*The following code styles the input group class*/
+         .input-group
+         {
+            width: 200%;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            position: relative;
+         }
+
+         /*The following code styles the label wintin input gruop class*/
+         .input-group label
+         {
+            flex-basis: 18%;
+         }
+
+         /*The following code styles the input,textarea within input group class*/
+         .input-group input,.input-group textarea
+         {
+            flex-basis: 25%;
+            background: transparent;	
+            border: 0;
+            outline: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #999;
+            color: #333;
+            font-size: 12px;
+         }
+            ::placeholder{
+            font-size: 14px;
+         }
+
+         /*The following code styles the form h2 within  contact-details id*/
+         form button
+         {
+            background-color: #088178;
+            color: #fff;
+            border: 20px solid #088178;
+            width: 30%;
+         }
+
+         /*The following code styles the div within people class*/
+         #form-details .people div 
+         {
+            padding-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+         }
+
+         /*The following code styles the img within people class*/
+         #form-details .people div img
+         {
+            width: 65px;
+            height: 65px;
+            object-fit: cover;
+            margin-right: 15px;
+         }
+
+         /*The following code styles 
+         <p>
+         within people class*/
+         #form-details .people div p
+         {
+            margin: 0;
+            font-size: 13px;
+            line-height: 25px; 
+         }
+
+         /*The following code styles the span within people class*/
+         #form-details .people div p span
+         {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+         } 
+
+         /*The following code styles the footer*/
+         footer
+         {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            bottom: 0;
+            width: auto;
+            padding-top: 40px;
+         }
+
+         footer .col .col-1, .col-2, .col-3, .col-4
+         {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            min-width:70px;
+            padding-left: auto;
+         }
+
+         .input-group span
+         {
+            bottom: 12px;
+            right: 17px;
+            font-size: 14px;
+            color: green;
+         }
+
+         #submit-error
+         {
+            color: red;
+         }
+
+      </style>
+   </head>
+   <body>
+
+   <!-------Site Header with naviagtion menu------->
+   <section id="header">
+
+   <!------ Insert a logo of e-cam store------>
+   <a href="#"><img src="../images/lens.png" class="logo" alt="" width="200px" height="100px"></a>
+
+   <!----div is used as container for HTML elements---->
+   <div>
+
+   <!----The <ul> HTML element represents an unordered list of items,typically rendered as a bulleted list---->
+   <ul id="navbar">
+
+   <!---The href attribute specifies the URL of the page the link goest to--->
+   <!---The <li> HTML element is used to represent an item in a list--->
+   <li><a href="../index.html">Home</a></li>
+   <li><a href="product.html">Products</a></li>
+   <li><a href="blog1.html">Blogs</a></li>
+   <li><a href="portfolio.html">About Us</li>
+   <li><a href="research.html">Research</a></li>
+   <li><a class="active" href="contact.html">Contact</a></li>
+   <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+   </ul>
+   </div>
+   </section>
+
+   <!---Site Header ends here---> 
+   <!---id attribute is used to specify a unique id for an HTML element--->
+<section id="page-header">
+   <h2>#Let's talk</h2>
+   <p>LEAVE A MESSAGE, We love to hear from you!</p>
+   <p id="current time"></p>
+</section>
+
+<!---if your element has class attribute then you will be able to write a CSS rule to select that class--->
+<section id="contact-details" class="section p1">
+   <div class="details">
+      <span>GET IN TOUCH</span>
+      <h2>Visit our store location or contact us today</h2>
+      <h3>Store</h3>
+      <div>
+         <li>
+            <a href=""><i class="fa fa-map"></i></a>
+            <p>Kamal Marg, Kathmandu 44600</p>
+         </li>
+         <li>
+            <a href=""><i class="fa fa-envelope"></i></a>
+            <p>ThirdEye@1gmail.com</p>
+         </li>
+         <li>
+            <a href=""><i class="fa fa-phone"></i></a>
+            <p>+977 9818230012, +977 9751123456</p>
+         </li>
+         <li>
+            <a href=""><i class="fa fa-hourglass-start"></i></a>
+            <p>Sunday to Friday:9.00am to 8.00pm</p>
+         </li>
+      </div>
+   </div>
+
+   <!----Google Map---->
+   <div class="map" >
+
+      <!---This a link google map--->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14129.247409908756!2d85.3149580922129!3d27.707656120499415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1908434cb3c5%3A0x1fdf1a6d41d2512d!2sIslington%20College!5e0!3m2!1sen!2snp!4v1681656635804!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   </div>
+</section>
+<section id="form-details">
+   <form >
+      <span>LEAVE A MESSAGE</span>
+      <h2>We Love to hear from you</h2>
+      <div class="input-group">
+         <label>Full Name</label>
+         <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()">
+         <span id="name-error"></span>
+      </div>
+      <div class="input-group">
+         <label>Phone No.</label>
+         <input type="tel" placeholder="123 456 7890" id="contact-phone" onkeyup="validatePhone()">
+         <span id="phone-error"></span>
+      </div>
+      <div class="input-group">
+         <label>Email Id</label>
+         <input type="email" placeholder="Enter Email" id="contact-email" onkeyup="validateEmail()">
+         <span id="email-error"></span>
+      </div>
+      <div class="input-group">
+         <label>Your Message</label>
+         <textarea rows="5" placeholder="Enter your message" id="contact-message" onkeyup="validateMessage()"></textarea>
+         <span id="message-error"></span>
+      </div>
+      <button  onclick=" validateform()">Submit</button>
+      <span id="submit-error"></span>
+   </form>
+   <script src="../js/script.js"></script>
+   <!---Group Members details--->
+   <div class="people">
+      <div>
+         <img src="../images/mausam.png" alt="">
+         <p><span>Mausam Rai</span> 1st member <br> Phone: 9861229604 <br>Email:raiaroha123@gmail.com</p>
+      </div>
+      <div>
+         <img src="../images/figo.jpg" alt="">
+         <p><span>Figo</span> 2nd member <br> Phone: 9840864157 <br> Email:kazuehara00@gmail.com</p>
+      </div>
+      <div>
+         <img src="../images/alina.jpg" alt="">
+         <p><span>Alina Mahat</span> 3rd member <br> Phone: 9818432201 <br>Email:alinamahat7@gmail.com</p>
+      </div>
+   </div>
+</section>
+   <script>
+
+      //This JavaScript code creates an interval that updates the content of an HTML element with the ID "current time" every second//
+      
+      let time = document.getElementById("current time");
+      
+      setInterval(() =>{
+       // It is determined by the user's local time zone) using the toLocaleTimeString() method of the Date object//
+      let d = new Date();
+      time.innerHTML = d.toLocaleTimeString();
+      
+      },1000)   
+      
+   </script>
+   </body>
+
+   <!----------------footer---------------->
+   <footer class="section1">
+      <div class="col">
+         <img class="logo" src="../images/lens.png">
+      </div>
+      <div class="col-1">
+         <h4>About Us</h4>
+         <a href="#">About Us</a><br>
+         <a href="#">Contact Us</a><br>
+         <a href="#">Blog</a><br>
+         <a href="#">Research</a>
+      </div>
+      <div class="col-2">
+         <h4>My Account</h4>
+         <a href="#">Sign In</a>
+         <a href="#">View Cart</a>
+      </div>
+      <div class="col-3">
+         <h4>Install App</h4>
+         <p>From App Store or Google Play</p>
+         <div class="row">
+            <img src="../images/logo7.jpg">
+            <img src="../images/logo8.jpg">
+         </div>
+         <p>Secured Way For Payments</p>
+         <div class="elogo">
+            <img src="../images/logo9.jpg">
+         </div>
+      </div>
+      <div class="col-4">
+         <h4>Contact</h4>
+         
+         <!---<strong>HTML element indicates that its contents have strong importance,seriousness,or urgency--->
+         <p><strong><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></strong>Kamal Marg, Kathmandu 44600</p>
+         <p><strong><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></strong>+977 9818230012, +977 9751123456</p>
+         <p><strong><a href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i></a> </strong>9.00 AM - 8.00 PM, Sun - Fri</p>
+         <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icon">
+               <i class="fa-brands fa-facebook-f"></i>
+               <i class="fa-brands fa-twitter"></i>
+               <i class="fa-brands fa-instagram"></i>
+               <i class="fa-brands fa-pinterest"></i>
+               <i class="fa-brands fa-youtube"></i>
+            </div>
+         </div>
+      </div>
+      <div class="copyright">
+         <p><b>&copy; Third Eye E-cam Store</b></p>
+      </div>
+   </footer>
+</html>

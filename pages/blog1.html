@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	  <!--- standard meta tags --->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Third Eye E-commerce store</title>
+		<meta name="description" content ="Just Basic Html"/>
+		<meta name="keywords" content="HTML"/>
+		<meta name="author" content="Team3"/>
+
+		<!---External css link--->
+		<link rel="stylesheet" type="text/css" href="../pages/../css/style.css">
+
+	  <!---This is link for google fonts--->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!---------Internal CSS is used--------->
+		<style type="text/css">
+
+			/* Define CSS variables for color palette */
+			:root
+			{
+			  --main: #7b4ee4 ;
+			  --darkblue: #362078;
+			  --black: #060606;
+			  --white: #e7dff4;
+			}
+      
+
+      /* style all the container1 class*/
+			.container1
+			{
+			  width: 1140px;
+			  max-width: 100%;
+			  margin: 0 auto;
+			  padding-top: 60px;
+			}
+
+      /* style all the container class*/
+			.container
+			{
+			  width: 100%;
+			  margin: 0;
+			  position: relative;
+			  display: flex;
+			  flex-direction: row;
+			  flex-wrap: wrap;
+			}
+      
+      /* style all the col-div-5 class*/
+			.col-div-5
+			{
+			  width: 50%;
+			}
+
+      /* style all the col-div-6 class*/
+			.col-div-6
+			{
+			  position: relative;
+			  width: 600px;
+			  padding: 40px;
+			  margin: 30px;
+			  background: #EFEEEE;
+			  display: flex;
+			  flex-direction: row;
+			  border-radius: 15px;
+			  box-shadow: 0 20px 40px rgb(0, 0, 0, 0.06);
+			}
+      
+      /* style a pseudo element for the col-div-6 class */
+			.col-div-6::before
+			{
+			  content: '';
+			  position: absolute;
+			  top: 0;
+			  right: 0;
+			  border: 30px solid transparent;
+			  border-top: 30px solid var(--main);
+			  border-right: 30px solid var(--main);
+			  border-radius: 15px;
+			}
+      
+      /* style the box-1 class within the col-div-6 class */
+			.container .col-div-6 .box-1
+			{
+			  position: relative;
+			  height: 800px;
+			  overflow: scroll;
+			}
+
+			/* Hide the scrollbar */
+			.container .col-div-6 .box-1
+			{
+			  overflow: auto;
+			}
+
+			/* Customize the scrollbar for webkit browsers (Chrome, Safari) */
+			.container .col-div-6 .box-1::-webkit-scrollbar 
+			{
+			  width: 6px;
+			}
+
+			.container .col-div-6 .box-1::-webkit-scrollbar-thumb 
+			{
+			  background-color: transparent;
+			}
+      
+      /* style the heading1 class within the col-div-6 class */
+			.container .col-div-6 .heading1
+			{
+			  font-size: 1.2em;
+			  font-weight: 600;
+			  margin-bottom: 5px;
+			}
+
+			/* Define a hover effect for the col-div-6 class */
+			.col-div-6:hover
+			{
+			  transform: translateY(-5px);
+			}
+
+			#more 
+			{
+			  display: none;
+			}
+			#more1 
+			{
+			  display: none;
+			}
+			#more2 
+			{
+			  display: none;
+			}
+			#more3
+			{
+			  display: none;
+			}
+			#more4 
+			{
+			  display: none;
+			}
+			#more5 
+			{
+			  display: none;
+			}
+      
+      /* style the logo class*/
+			.logo
+			{
+			  font-weight: bold;
+			  font-size: 25px;
+			  color: var(--black);
+			}
+      /* style the readbtn class*/
+			.readbtn
+			{
+			  background: #17e78c;
+		      display: inline-block;
+			  color: #fff;
+			  padding: 10px 20px;
+			  margin: 20px 0;
+			  border-radius: 30px;
+			  transition: background 0.5s;
+			}
+
+      /* Define a hover effect for the readbtn class */
+			.readbtn:hover
+			{
+			  background: #3c5b9a;
+			}
+
+      /* style the banner-section class*/
+			.banner-section
+			{
+			  background: var(--main);
+			  height: 400px;
+			  overflow: hidden;
+			}
+       
+      /* style the heading class*/
+			.heading
+			{
+			  color: var(--white);
+			  font-size: 40px;
+			  letter-spacing: 1px;
+			  margin-top: 14%;
+			}
+      
+      /* style the input-box class*/
+			.input-box
+			{
+			  box-shadow: 1px 7px 8px 0px #222121;
+			  width: 360px;
+			  border-radius: 50%;
+			}
+      
+      /* style the input element within the input-box class */
+			.input-box input[type="text"]
+			{
+			  padding: 9px;
+			  width: 265px;
+			  border: none;
+			  border-radius: 5px;
+			  outline: none;
+			}
+      
+      /* style the button element within the input-box class */
+			.input-box button
+			{
+			  padding: 10px 20px;
+			  border-radius: 0px 5px 5px 0px;
+			  border: none;
+			  margin-left: -6px;
+			  background: var(--darkblue);
+			  color: white;
+			  cursor: pointer;
+			}
+      
+      /* style the b-img class */
+			.b-img
+			{
+			  width: 100%;
+			  border-radius: 10px;
+			  height: 40%;
+			}
+      
+      /* style the heading1 class */
+			.heading1
+			{
+			  margin-top: 20px;
+			  color: var(--main);
+			  font-size: 14px;
+			  text-transform: uppercase;
+			}
+
+			/* style all the text class*/
+			.text
+			{
+			  font-size: 15px;
+			  letter-spacing: 1px;
+			  color: var(--black);
+			  margin-bottom: 20px;
+			  text-align: justify;
+			}
+		</style>
+</head>
+<body>
+    <!---Site Header with navigation menu--->
+		<header>
+			<section id="header1">
+				<img src="../pages/../images/lens.png" class="logo" alt="Website logo" width="200px" height="100px">
+			        <!--nav tag defines a set of navigation links-->
+			        <div>
+			        	<ul id="navbar">
+					       <li><a href="../index.html">Home</a></li>
+					       <li><a href="product.html">Products</a></li>
+					       <li><a class="active" href="blog1.html">Blogs</a></li>
+					       <li><a href="portfolio.html">About Us</a></li>
+					       <li><a href="research.html">Research</a></li>
+					       <li><a href="contact.html">Contact</a></li>	
+					       <li class="checkout">
+					       	<a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+				        </ul>
+			        </div>
+			</section>
+		</header>
+		<!---Site Header ends here--->
+
+    <section class="banner-section">
+			<div class="container1">
+				<div class="col-div-5">
+					<h1 class="heading">A blog that people will<br> actually want to read</h1>
+					<div class="input-box"><input type="text" placeholder="Enter Your Email"><button>Try it</button></div>
+				</div>
+			</div>
+				<div class="clearfix"></div>
+		</section>
+
+	  <div class="container">
+		<br>
+		<br>
+			<div class="col-div-6">
+				<div class="box-1">
+					<img src="../pages/../images/techno.jpg" class="b-img">
+					<h3 class="heading1">Technology in Present World</h3>
+					<p class="text">Technology is a constantly evolving and influential force in contemporary society. It has experienced substantial transformations and advancements since the early 1900s, and this progress continues unabated. Technology occupies a prominent position in our daily lives, impacting us from the moment we wake up until we go to bed. Broadly defined, technology encompasses the techniques and knowledge utilized by humans to enhance their capabilities and fulfill fundamental needs. It also encompasses the ways in which individuals modify the natural environment to achieve their goals.
+	          </p>
+
+	          <!---The <span> tag is an inline container used to mark up a part of a text, or a part of a document--->
+
+					<p class="text">The world we inhabit is undeniably shaped by the pervasive presence of technology. The development of human civilization has been profoundly influenced by a combination of cultural shifts and technological advancements. Through ingenious and innovative means, technology provides inventive solutions for accomplishing tasks, thereby enhancing both individual and organizational productivity. The impact of technology on our daily lives is evident, ranging from the devices we rely on to communicate with loved ones to the tools we employ in our professional lives to maximize efficiency. Various sectors have experienced a remarkable <span id="dots">...</span><span id="more"> transformation due to technological advancements, and its role in the progress of humanity throughout history is unquestionable. However, merely possessing the latest technology is insufficient in today's rapidly evolving technological landscape.<br><br> Overall, technology has reshaped the present world, offering tremendous opportunities for innovation, connectivity, and progress. It continues to evolve and shape our future, and its responsible and ethical implementation is crucial for maximizing its potential benefits.</span> </p>
+
+            <!---The <button> tag is used to create a clickable button within HTML form on your webpage--->
+					  <button onclick="myFunction()" id="myBtn" class="readbtn">Read more</button>
+			    </div>
+		  	</div>
+		
+			<div class="col-div-6">
+				<div class="box-1">
+					<img src="../pages/../images/field.jpg" class="b-img">
+					<h3 class="heading1">Usage of technology in different field</h3>
+					<p class="text">While a single piece of technology often overlaps into different areas, here are some of the fields where techology are used</p>
+
+						<!---The <ul> HTML element represents an unordered list of items, typically rendered as a bulleted list--->
+						<ul>
+							<!---The <li> HTML element is used to represent an item in a list--->
+							<li>Communication</li>
+							<li>Business</li>
+							<li>Health</li>
+							<li>Artificial Intelligence</li>
+							<li>Education</li>
+							<li>Transportation</li>
+							<li>Internet of Things(IoT)</li>
+							<li>Finance</li>
+							<li>Entertainment</li>
+							<li>Agriculture</li>
+							<span id="dots1">...</span><span id="more1">
+							<li>Energy</li>
+							<li>Retail and E-commerce</li>
+							<li>Environmental Conservation</li>
+							<li>Construction and Architecture</li>
+					  </ul>
+	            </span> 
+					    <button onclick="myFunction1()" id="myBtn1" class="readbtn">Read more</button>
+			  </div>
+		    </div>
+
+			<div class="col-div-6">
+					<div class="box-1">
+						<img src="../pages/../images/pros.jpg" class="b-img">
+						<h3 class="heading1">Positive impact of technolofy</h3>
+						<p class="text">There is no denying the significant impact technology has had on our lives, becoming an integral aspect of our identity. It has brought about undeniable enhancements, enabling us to achieve levels of efficiency and productivity that were previously unimaginable, especially when it comes to communication and the operation of businesses. Technology has revolutionized the way we interact with one another and conduct our professional endeavors, propelling us into a new era of interconnectedness and streamlined operations.
+		        </p>
+						<p class="text">Technology has exerted a favorable influence on businesses, empowering them to optimize their operations through process automation, streamlined communication, and enhanced efficiency. This, in turn, facilitates swift and effective business functioning, resulting in heightened productivity and improved profitability. Communication has undergone a revolutionary transformation with the advent of social media, enabling individuals to connect and engage with others on a global scale. From staying connected with loved ones to participating in meaningful discussions with individuals worldwide, social media platforms have opened up new avenues for collaboration and interaction.<br><br><span id="dots2">...</span><span id="more2">In the medical field, technology has brought about a paradigm shift in healthcare delivery. Healthcare professionals now possess the tools to diagnose and treat patients more swiftly and accurately, thanks to advancements in technology. Access to critical information is readily available, enabling medical practitioners to make well-informed decisions in the best interest of their patients. Moreover, technology has made education more accessible to people worldwide. The internet and online learning platforms have revolutionized the educational landscape, providing students with an abundance of educational resources. This increased accessibility simplifies the pursuit of further education and equips individuals with the necessary skills for success. <br><br> In summary, the positive impact of technology on various aspects of our lives is evident. From communication to business operations, healthcare, education, and beyond, technology has proven to be a catalyst for progress and improvement.
+						</span></p>
+
+						<button onclick="myFunction2()" id="myBtn2" class="readbtn">Read more</button>
+				</div>
+			</div>
+
+			<div class="col-div-6">
+					<div class="box-1">
+						<img src="../pages/../images/cons.jpg" class="b-img">
+						<h3 class="heading1">negative impact of  Technology</h3>
+						<p class="text">The continuous progress in technology has brought about increased connectivity among individuals, yet it is crucial to acknowledge that there can be drawbacks associated with this development. While certain forms of technology have undoubtedly brought positive transformations to the world, there is also substantial evidence pointing to the negative consequences of technology and its excessive utilization.</p>
+						<p class="text">Nevertheless, it is important to acknowledge that technology can also have detrimental effects, particularly when it comes to distractions and unhealthy behaviors like excessive screen time. The rise of social media, for instance, has contributed to feelings of anxiety and stress as individuals compare themselves to others and measure their lives against the carefully curated online personas they encounter.<br><br>In the realm of business, technology presents a dual-edged sword. While it offers opportunities for streamlining processes and enhancing efficiency, it can also introduce distractions in the workplace. <span id="dots3">...</span><span id="more3"><br>Employees may easily become sidetracked by their mobile devices, leading to decreased productivity. Moreover, the security risks associated with technology pose a significant concern for businesses, as data breaches can result in substantial financial losses. One significant impact of technology is the ability for individuals to assume different identities online, leading to a surge in cyberbullying. This anonymity afforded by the internet has resulted in a widespread problem, with online harassment playing a role in the alarming increase of youth suicides. The accessibility of explicit content and violence on the web is also a major concern, despite efforts to implement parental controls. <br><br>In summary, while technology brings numerous benefits, it is crucial to recognize and address the negative implications it can have on mental well-being, productivity in the workplace, data security, and the safety of vulnerable individuals. Striking a balance and implementing responsible use of technology is essential in order to mitigate these potential adverse effects.</span> </p>
+
+						<button onclick="myFunction3()" id="myBtn3" class="readbtn">Read more</button>
+				  </div>
+			</div>
+
+			<div class="col-div-6">
+					<div class="box-1">
+						<img src="../pages/../images/snap.jpg" class="b-img">
+						<h3 class="heading1">impact of technology in e-commerce website</h3>
+						<p class="text">There is no doubt that technology serves as the fundamental backbone of the e-commerce industry. It acts as a bridge between sellers and buyers, facilitating transactions on both web and mobile platforms. Moreover, technology streamlines the management of customer orders, delivery processes, and payment transactions, enhancing the overall efficiency of e-commerce operations. It plays a crucial role in establishing value chains for e-commerce and more. 
+		        </p>
+						<p class="text">The growth of online shopping has provided businesses with the opportunity to expand their customer base, ultimately leading to increased sales and revenue. Moreover, advancements in technology, such as artificial intelligence, have empowered businesses to offer personalized and tailored purchasing experiences to their clients. This level of customization enhances customer satisfaction and loyalty. Additionally, technology has revolutionized marketing strategies, enabling businesses to automate various processes, improve productivity.<br><br> Furthermore, technology has paved the way for secure and convenient payment options, including cryptocurrencies and digital wallets, making transactions more seamless for customers.<span id="dots4">...</span><span id="more4"> However, it is important to acknowledge that technology has also introduced challenges for the e-commerce industry. Concerns surrounding fraud and scams have led to customer apprehension in sharing personal and financial information online, creating a sense of mistrust.<br><br>Another aspect to consider is the potential impact of technology on creativity and innovation within businesses. While technology offers efficiency and convenience, it may inadvertently stifle the creative thinking and originality of workers and employees.<br><br>In summary, technology has brought about numerous benefits to the e-commerce industry, including expanded reach, personalized experiences, automated processes, and improved payment options. However, challenges related to security, privacy, creativity, and technical expertise should be carefully addressed to ensure a balanced and successful e-commerce ecosystem.</span></p>
+
+						<button onclick="myFunction4()" id="myBtn4" class="readbtn">Read more</button>
+				</div>
+			</div> 
+		
+			<div class="col-div-6">
+					<div class="box-1">
+						<img src="../pages/../images/end.jpg" class="b-img">
+						<h3 class="heading1">Conclusion</h3>
+						<p class="text">In every situation, there exist both positive and negative aspects. This applies to all aspects of life, highlighting the inherent duality of existence. The perspective we choose to adopt determines whether we perceive things positively or negatively. Ultimately, it is our personal choice to approach situations with either a positive or negative mindset. </p>
+						<p class="text">Technology's influence on e-commerce businesses is a double-edged sword, encompassing both positive and negative impacts. While there are certain drawbacks associated with technology in the business realm, such as increased risks of hacking, data theft, privacy invasion, malware threats, social isolation, and cybercrime, it is important to note that the positive effects outweigh the negative ones.<br> <br>The positive impact of technology on e-commerce businesses cannot be overstated. It has revolutionized marketing strategies, enabling businesses to effectively promote their products and services to a wider audience.<span id="dots5">...</span><span id="more5"> Additionally, technology facilitates faster and more efficient communication between businesses and customers, leading to enhanced customer satisfaction and loyalty. Moreover, it has greatly contributed to increased productivity in the e-commerce sector, streamlining processes and optimizing operations.<br> <br> In conclusion, it is evident that e-commerce continues to progress and evolve, offering a safer and more convenient environment for consumers while playing a crucial role in the growth and success of businesses. Therefore, businesses should not overlook the importance of engaging in e-commerce activities if they aspire to thrive in today's digital landscape.</span></p>
+
+						<button onclick="myFunction5()" id="myBtn5" class="readbtn">Read more</button>
+				</div>
+	    	</div> 
+<br>
+<br>
+
+<!----------footer--------->
+<footer class="section1">
+	<div class="col">
+		<img class="logo" src="../pages/../images/lens.png">
+	</div>
+	<div class="col-1">
+		<h4>About Us</h4>
+		<a href="#">About Us</a><br>
+		<a href="#">Contact Us</a><br>
+		<a href="#">Blog</a><br>
+		<a href="#">Research</a>
+	</div>
+	<div class="col-2">
+		<h4>My Account</h4>
+		<a href="#">Sign In</a>
+		<a href="#">View Cart</a>
+	</div>
+	<div class="col-3">
+		<h4>Install App</h4>
+		<p>From App Store or Google Play</p>
+		<div class="row">
+			<img src="../pages/../images/logo7.jpg">
+			<img src="../pages/../images/logo8.jpg">
+	  </div>
+		<p>Secured Way For Payments</p>
+		<div class="elogo">
+			<img src="../pages/../images/logo9.jpg">
+		</div>
+	</div>
+	<div class="col-4">	
+		<h4>Contact</h4>
+		<p><strong><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></strong>Kamal Marg, Kathmandu 44600</p>
+		<p><strong><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></strong>+977 9818230012, +977 9751123456</p>
+		<p><strong><a href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i></a> </strong>9.00 AM - 6.00 PM, Sun - Fri</p>
+		<div class="follow">
+			<h4>Follow Us</h4>
+			<div class="icon">
+				<i class="fa fa-facebook"></i>
+				<i class="fa fa-twitter"></i>
+				<i class="fa fa-instagram"></i>
+				<i class="fa fa-pinterest"></i>
+				<i class="fa fa-youtube"></i>
+			</div>
+		</div>
+	</div>
+
+	<div class="copyright">
+		<p><b>&copy; Third Eye E-cam Store</b></p> 
+	</div>
+</footer>
+
+<!---Internal JavaScript link--->
+<!--The following script contains multiple functions, each responsible for toggling the display of a specific section of text.-->
+<script>
+
+	// The functions are named myFunction, myFunction1, myFunction2, myFunction3, myFunction4, and myFunction5.
+	// Each function uses the getElementById method to retrieve the relevant HTML elements by their IDs.
+
+	function myFunction() {
+	// The function then checks the current value of the "display" style property for the dots element.
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  
+  // If the value is "none", then the function sets the dots element to display inline, changes the text of the button to "Read more", and sets the display property of the moreText element to "none".
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } 
+
+  // If the value is not "none", then the function sets the dots element to display "none", changes the text of the button to "Read less", and sets the display property of the moreText element to "inline".
+  else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+
+function myFunction1() {
+  var dots1 = document.getElementById("dots1");
+  var moreText1 = document.getElementById("more1");
+  var btnText1 = document.getElementById("myBtn1");
+
+  if (dots1.style.display === "none") {
+    dots1.style.display = "inline";
+    btnText1.innerHTML = "Read more";
+    moreText1.style.display = "none";
+  } else {
+    dots1.style.display = "none";
+    btnText1.innerHTML = "Read less";
+    moreText1.style.display = "inline";
+  }
+}
+
+function myFunction2() {
+  var dots2 = document.getElementById("dots2");
+  var moreText2 = document.getElementById("more2");
+  var btnText2 = document.getElementById("myBtn2");
+
+  if (dots2.style.display === "none") {
+    dots2.style.display = "inline";
+    btnText2.innerHTML = "Read more";
+    moreText2.style.display = "none";
+  } else {
+    dots2.style.display = "none";
+    btnText2.innerHTML = "Read less";
+    moreText2.style.display = "inline";
+  }
+}
+
+function myFunction3() {
+  var dots3 = document.getElementById("dots3");
+  var moreText3 = document.getElementById("more3");
+  var btnText3 = document.getElementById("myBtn3");
+
+  if (dots3.style.display === "none") {
+    dots3.style.display = "inline";
+    btnText3.innerHTML = "Read more";
+    moreText3.style.display = "none";
+  } else {
+    dots3.style.display = "none";
+    btnText3.innerHTML = "Read less";
+    moreText3.style.display = "inline";
+  }
+}
+
+function myFunction4() {
+  var dots4 = document.getElementById("dots4");
+  var moreText4 = document.getElementById("more4");
+  var btnText4 = document.getElementById("myBtn4");
+
+  if (dots4.style.display === "none") {
+    dots4.style.display = "inline";
+    btnText4.innerHTML = "Read more";
+    moreText4.style.display = "none";
+  } else {
+    dots4.style.display = "none";
+    btnText4.innerHTML = "Read less";
+    moreText4.style.display = "inline";
+  }
+}
+
+function myFunction5() {
+  var dots5 = document.getElementById("dots5");
+  var moreText5 = document.getElementById("more5");
+  var btnText5 = document.getElementById("myBtn5");
+
+  if (dots5.style.display === "none") {
+    dots5.style.display = "inline";
+    btnText5.innerHTML = "Read more";
+    moreText5.style.display = "none";
+  } else {
+    dots5.style.display = "none";
+    btnText5.innerHTML = "Read less";
+    moreText5.style.display = "inline";
+  }
+}
+</script>
+</body>
+</html>

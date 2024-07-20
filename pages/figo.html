@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style class="text/css">
+        *
+            {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            p 
+            {
+                text-align: justify;
+            }
+
+            /* The following CSS code styles the body */
+            body
+            {
+                background: radial-gradient(#fff, #ffd6d6);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* The following CSS code styles the class container */
+            .container
+            {
+                position: relative;
+                width: 100%;
+                background: #fff;
+                display: flex;
+                grid-template-columns: 1fr 2fr;
+                box-shadow: 0 35px 35px rgba(0,0,0,0.1);
+                min-width: 1300px;
+                height: 100%;
+                padding-top: 100px;
+            }
+
+            /* The following CSS code styles subclass left-class of the class container */
+            .container .left-side
+            {
+                position: relative;
+                background: #003147;
+                padding: 40px;
+            }
+
+            /* The following CSS code styles the class profiletext */
+            .profiletext
+            {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+            /* The following CSS code styles the sub-class imgbx of the class profiletext */
+            .profiletext .imgbx
+            {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            /* The following CSS code styles image of the sub-class imgbx of the class profiletext */
+            .profiletext .imgbx img
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /* The following CSS code styles headertext of the sub-class imgbx of the class profiletext */
+            .profiletext h2
+            {
+                color: #fff;
+                font-size: 1.5em;
+                margin-top: 20px;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 600;
+                line-height: 1.4em;
+            }
+
+            /* The following CSS code styles the span tag of the sub-class of the class profiletext */
+            .profiletext h2 span
+            {
+                font-size: 0.8em;
+                font-weight: 300;
+            }
+
+            /* The following CSS code styles the class contactinfo */
+            .contactinfo
+            {
+                padding-top: 40px;
+            }
+    
+            /* The following CSS code styles the class title */
+            .title
+            {
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            /* The following CSS code styles the ul tag of the class title */
+            .contactinfo ul
+            {
+                position: relative;
+            }
+
+            /* The following CSSs code style the list tag of the class contactinfo */
+            .contactinfo ul li
+            {
+                position: relative;
+                list-style: none;
+                margin: 10px 0;
+                cursor: pointer;
+            }
+
+            .contactinfo ul li .icon
+            {
+                display: inline-block;
+                width: 30px;
+                font-size: 18px;
+                color: #03a9f4;
+            }
+
+            .contactinfo ul li span
+            {
+                color: #fff;
+                font-weight: 300;
+            }
+
+            .contactinfo.education li
+            {
+                margin-bottom: 15px;
+            }
+
+            /* The following CSSs code style header text of the sub-class education of the class contactinfo */
+            .contactinfo.education h5
+            {
+                color: #03a9f4;
+                font-weight: 500;
+            }
+
+            .contactinfo.education h4
+            {
+                color: #fff;
+                font-weight: 500;
+            }
+
+            /* The following CSSs code style the sub-sub-class percent of the class contactinfo */
+            .contactinfo.language .percent
+            {
+                position: relative;
+                width: 100%;
+                height: 6px;
+                background: #081921;
+                display: block;
+                margin-top: 5px;
+            }
+
+            /* The following CSSs code style the sub-sub-class percent containing div tag of the class contactinfo */
+            .contactinfo.language .percent div
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #03a9f4;
+            }
+
+            /* The following CSSs code style the sub-class right-side of the class contactinfo */
+            .container .right-side
+            {
+                position: relative;
+                background: #fff;
+                padding: 40px;
+                margin-bottom: 20px;
+            }
+
+            /* The following CSSs code style the class about */
+            .about
+            {
+                margin-bottom: 50px;
+            }
+
+            .about:last-child
+            {
+                margin-bottom: 0;
+            }
+
+            /* The following CSSs code style the class title2 */
+            .title2
+            {
+                color: #003147;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+
+            /* The following CSSs code style paragraph*/
+            p
+            {
+                color: #333;
+            }
+
+            /* The following CSSs code style the class about and its subclass */
+            .about .box
+            {
+                display: flex;
+                flex-direction: row;
+                margin: 20px 10px;
+            }
+
+            .about .box .year-company
+            {
+                min-width: 150px;
+            }
+
+            .about .box .year-company h5
+            {
+                color: #848c90;
+                font-weight: 600;
+            }
+
+            .about .box .text h4
+            {
+                text-transform: uppercase;
+                color: #2a7da2;
+                font-size: 16px;
+            }
+
+            /* The following CSSs code style the class skills and its subclass */
+            .skills .box
+            {
+                position: relative;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 150px 1fr;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .skills .box h4
+            {
+                text-transform: uppercase;
+                color: #848c99;
+                font-weight: 500;
+            }
+
+            .skills .box .percent
+            {
+                position: relative;
+                width: 100%;
+                height: 10px;
+                background: #f0f0f0;
+            }
+
+            .skills .box .percent div
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: black;
+            }
+
+            /* The following CSSs code style the class interest and the listings */
+            .interest ul
+            {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            }
+
+            .interest ul li
+            {
+                list-style: none;
+                color: #333;
+                font-weight: 500;
+                margin: 10px 0;
+            }
+
+            .interest ul li .fa
+            {
+                color: #03a9f4;
+                font-size: 18px;
+                width: 20px;
+            }
+
+            @media (max-width: 1000px)
+            {
+                .container
+                {
+                margin: 10px;
+                }
+            }
+
+            footer .copyright p
+            {
+                font-size: 20px;
+                margin-left: 44%;
+            }
+    </style>
+</head>
+<body>
+    <section id="header1">
+        <img src="../images/lens.png" class="logo" width="200px" height="100px" class="photo">
+               <!--nav tag defines a set of navigation links-->
+               <div>
+                <ul id="navbar">
+              <li><a class="#"href="../index.html">Home</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="blog1.html">Blogs</a></li>
+              <li><a class="active"href="portfolio.html">About Us</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              
+              
+              <li class="checkout">
+              <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+               </ul>
+               </div>
+               <style>
+            /* The following CSS code styles the header */
+            #header1
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 100px;
+                background-color: #ECF0F1;
+                position: fixed;
+                box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
+                z-index: 999;
+                top: 0;
+                left: 0;
+                width:100%;
+                height: 13%;
+            }
+
+            /* The following CSS code styles the navbar */
+            #navbar
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* The following CSS code styles the list items within the navbar */
+            #navbar li
+            {
+                list-style: none;
+                padding: 0 20px;
+                position: relative;
+            }
+
+            /* The following CSS code styles the links within the navbar */
+            #navbar li a
+            {
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                color: #3c5b9a;
+                transition: 0.3s ease;
+            }
+
+            /* The following CSS code styles the links within the navbar on hover */
+            #navbar li a:hover
+            {
+                color: green;
+            }
+            /* The following CSS code styles the content that appears after the links within the navbar on hover and when active */
+            #navbar li a:hover,
+
+            #navbar li a.active
+            {
+            color: green;
+            }
+
+            #navbar li a.active::after,
+
+            #navbar li a:hover::after
+            {
+                content: "";
+                width: 30%;
+                height: 2px;
+                background: green;
+                position: absolute;
+                bottom: -4px;
+                left: 20px;
+            }
+               </style>
+        </section>
+    <div class="container">
+        <div class="left-side">
+            <div class="profiletext">
+                <div class="imgbx">
+                    <img src="../images/figo.jpg">
+                </div>
+                <h2>Figo<br><span>Website Designer</span></h2>
+            </div>
+            <div class="contactinfo">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">+9779840864157</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">kazuehara00@gmail.con</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">www.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">fb.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">Kathmandu, Nepal</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactinfo education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                       <h5>2010-2020</h5>
+                       <h4>Basic Knowledge Computer Science</h4>
+                       <h4>Victory Education Center</h4>
+                    </li>
+                    <li>
+                        <h5>2020-2022</h5>
+                        <h4>Basic Knowledge Computer Science</h4>
+                        <h4>Uniglobe College</h4>
+                     </li>
+                     <li>
+                        <h5>2020-presnt</h5>
+                        <h4>Advanced Knowledge Computer Science</h4>
+                        <h4>Islington College,Kathmandu</h4>
+                     </li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            
+            <div class="contactinfo language">
+                <h3 class="title">Languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                        <div style="width: 90%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Hindi</span>
+                        <span class="percent"><div style="width: 60%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Nepali</span>
+                        <span class="percent">                            
+                        <div style="width: 80%;"></div>
+
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="right-side">
+            <div class="about">
+                <h2 class="titile2">Profile</h2>
+                <p>Hello, I am Figo,born in 28th March 2002. I finised my school level in VEC and currently studying in Islington college focusing on Cyber Security.As a student studying information technology, I'm constantly looking for fresh challenges to take on and issues to resolve. I enjoy the rush of plunging headfirst into challenging coding challenges and developing ground-breaking solutions that push the envelope of what is conceivable. I enjoy reading science fiction books and traveling to other realms through the written word when I'm not coding. Additionally, I like immersing myself in virtual worlds where I can be anybody or anything I want to be through playing video games. </p>
+            
+            </div>
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year-company">
+                    <h5>2010 - 2020</h5>
+                    <h5>Victory Education Center</h5>
+                </div>
+                <div class="text">
+                    <h4>School Level Student</h4>
+                    <p>I originally learned about computer science and the fundamentals of computer science, including HTML and CSS, at Victory Education Center in Myanmar. Later on, this helped me pursue my computer science education.</p>
+                    
+                </div>
+                </div>
+                <div class="box">
+                    <div class="year-company">
+                    <h5>2020 - 2022</h5>
+                    <h5>Uniglobe College</h5>
+                </div>
+                <div class="text">
+                    <h4>School Level Student</h4>
+                    <p>I learned how to utilize HTML and CSS properly here, including the syntax and tags and how and where to apply them in Uniglobe College.</p>
+                    
+                </div>
+                </div>
+                <div class="box">
+                    <div class="year-company">
+                    <h5>2022 - Present</h5>
+                    <h5>Islington College</h5>
+                </div>
+                <div class="text">
+                    <h4>College Student</h4>
+                    <p>This is where I received proper instruction on HTML and CSS, including syntax and tags and where and how to use them.</p>
+                    
+                </div>
+                </div>
+            </div>
+            <div class="about skills">
+                <h2 class="title2">Professional Skills</h2>
+                <div class="box">
+                    <h4>HTML</h4>
+                    <div class="percent">
+                        <div style="width: 95%;">
+                    </div>
+                </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent"><div style="width: 90%;">
+                    </div></div>
+                </div>
+                <div class="box">
+                    <h4>Javascript</h4>
+                    <div class="percent"><div style="width: 87%;">
+                    </div></div>
+                </div>
+                <div class="box">
+                    <h4>Photoshop</h4>
+                    <div class="percent"><div style="width: 75%;">
+                    </div></div>
+                </div>
+                <div class="box">
+                    <h4>My SQL</h4>
+                    <div class="percent"><div style="width: 80%;">
+                    </div></div>
+                </div>
+            </div>
+
+            <div class="about interest">
+                <h2 class="title2">interest</h2>
+                <ul>
+                    <li><i class="fa fa-gamepad" aria-hidden="true"></i>
+                        Gaming</li>
+                    <li><i class="fa fa-microphone" aria-hidden="true"></i>
+                        Singing</li>
+                    <li><i class="fa fa-book" aria-hidden="true"></i>
+                        Reading</li>
+                    <li><i class="fa fa-cutlery" aria-hidden="true"></i>
+                        Gaming</li>
+                </ul>
+            </div>
+
+        </div>
+    <footer class="section1">
+        <div class="col">
+        <img class="logo" src="../images/lens.png">
+        </div>
+        <div class="col-1">
+        <h4>About Us</h4>
+        <a href="#">About Us</a><br>
+        <a href="#">Contact Us</a><br>
+        <a href="#">Blog</a><br>
+        <a href="#">Research</a>
+        </div>
+        <div class="col-2">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        </div>
+        <div class="col-3">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+        <img src="../images/logo7.jpg">
+        <img src="../images/logo8.jpg">
+        </div>
+        <p>Secured Way For Payments</p>
+        <div class="elogo">
+        <img src="../images/logo9.jpg">
+        </div>
+        </div>
+        <div class="col-4">
+        
+        <h4>Contact</h4>
+        <p><strong><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i></a></strong>Kamal Marg, Kathmandu 44600</p>
+        <p><strong><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></strong>+977 9818230012, +977 9751123456</p>
+        <p><strong><a href="#"><i class="fa fa-hourglass-start" aria-hidden="true"></i></a> </strong>9.00 AM - 6.00 PM, Sun - Fri</p>
+        <div class="follow">
+        <h4>Follow Us</h4>
+        <div class="icon">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-pinterest"></i>
+        <i class="fa fa-youtube"></i>
+        </div>
+        </div>
+        </div>
+        
+        <div class="copyright">
+        <p><b>&copy; Third Eye E-cam Store</b></p>
+        </div>
+        <style>
+            /*footer*/
+            /* The following CSS code styles the footer class */        
+            footer
+            {
+                position: absolute;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                bottom: 0;
+                width: auto;
+                height: auto;
+                padding-top: 40px;
+                background: #ffffff;
+            }
+
+            footer .col .col-1, .col-2, .col-3, .col-4
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 20px;
+                min-width:70px;
+                padding-left: auto;
+            }
+
+            footer .col
+            {
+                flex-basis: 20%;
+            }
+
+            footer .col-1
+            {
+                flex-basis: 10%;
+            }
+
+            footer .col-2
+            {
+                flex-basis: 10%;
+            }
+
+            footer .logo
+            {
+                margin-bottom: 30px;
+                width: 60%;
+            }
+
+            footer .col-3
+            {
+                flex-basis: 20%;
+            }
+
+            footer .col-4
+            {
+                flex-basis: 20%;
+            }
+
+            footer h4
+            {
+                font-size: 14px;
+                padding-bottom: 20px;
+            }
+
+            footer p
+            {
+                font-size: 15px;
+                margin: 0 0 8px 0;
+            }
+
+            footer a
+            {
+                font-size: 15px;
+                text-decoration: none;
+                color: #222;
+                margin-bottom: 10px;
+            }
+
+            footer .follow
+            {
+                margin-top: 20px;
+            }
+
+            footer .follow i
+            {
+                color: #465b52;
+                padding-right: 4px;
+                cursor: pointer;
+            }
+
+            footer .col-3 .row img
+            {
+                width: 40%;
+            }
+
+            footer .col img
+            {
+                margin: 10px 0 10px 0;
+            }
+
+            footer.follow i:hover,
+
+            footer a:hover
+            {
+                color: #088178;
+            }
+
+            footer .col-3 .elogo  img
+            {
+                width: 40%
+            }
+
+            footer .copyright
+            {
+                width: 100%;
+                text-align: center;
+            }
+            
+            footer h4
+            {
+                color: #3c5b9a;
+                font-weight: normal;
+                font-size: 20px;
+            }
+
+            footer .copyright p
+            {
+                font-size: 20px;
+                margin-left: 40%;
+            }
+        </style>
+        </footer>
+</body>
+</html
